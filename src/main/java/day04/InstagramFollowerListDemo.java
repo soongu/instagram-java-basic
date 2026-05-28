@@ -32,7 +32,7 @@ void main() {
     System.out.println();
 
     // 팔로워 목록 — enhanced for
-    String[] followers = {"장원영", "카리나", "민지", "하니", "해린"};
+    String[] followers = {"장원영", "카리나", "사쿠라", "김채원", "안유진"};
     System.out.println("--- 팔로워 목록 ---");
     int number = 0;
     for (String name : followers) {
