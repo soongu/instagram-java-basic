@@ -1,7 +1,7 @@
 void main() {
     // 배열 맛보기 — 여러 데이터를 한 줄에 담기
     System.out.println("=== 배열 선언과 기본 for 순회 ===");
-    String[] followers = {"장원영", "카리나", "민지", "하니", "해린"};
+    String[] followers = {"장원영", "카리나", "사쿠라", "김채원", "안유진"};
 
     for (int i = 0; i < followers.length; i++) {
         System.out.println((i + 1) + "번째 팔로워: " + followers[i]);
