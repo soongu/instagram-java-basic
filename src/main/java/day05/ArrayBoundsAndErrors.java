@@ -25,7 +25,7 @@ void main() {
     System.out.println();
 
     // 3) 자주 하는 실수: .length 가 아니라 .length - 1 이 마지막 인덱스
-    System.out.println("[헷갈리는 자리] 마지막 인덱스는 length - 1");
+    System.out.println("[헷갈리는 부분] 마지막 인덱스는 length - 1");
     System.out.println("  .length = " + followers.length);
     System.out.println("  마지막 인덱스 = " + (followers.length - 1));
     System.out.println("  마지막 사람 = " + followers[followers.length - 1]);

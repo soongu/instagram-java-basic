@@ -39,7 +39,7 @@ void main() {
     System.out.println("평균: " + (total / count) + "개");
     System.out.println();
 
-    // 행마다 합계 — 한 줄씩 들여다보기
+    // 행마다 합계 — 줄 단위로 들여다보기
     System.out.println("[줄별 합계]");
     for (int row = 0; row < feedGrid.length; row++) {
         int rowSum = 0;

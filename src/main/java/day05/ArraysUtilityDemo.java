@@ -30,7 +30,7 @@ void main() {
     System.out.println("Top " + topN + ": " + Arrays.toString(top));
     System.out.println();
 
-    // Arrays.copyOf 본래 형태도 한 번 보여주기 — 앞에서부터 N개
+    // Arrays.copyOf 본래 형태도 살펴볼게요 — 앞에서부터 N개
     int[] firstThree = Arrays.copyOf(likes, 3);
     System.out.println("[Arrays.copyOf] 정렬된 배열 앞 3개 (가장 작은 3개)");
     System.out.println("앞 3개: " + Arrays.toString(firstThree));
