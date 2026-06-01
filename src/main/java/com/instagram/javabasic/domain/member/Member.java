@@ -4,9 +4,12 @@ package com.instagram.javabasic.domain.member;
 // 인스타 추천 사용자 한 명을 표현하는 클래스예요.
 // 지난 시간엔 한 사람의 정보가 평행 배열 다섯 개에 흩어져 있었는데,
 // 이제 그 다섯 가지를 한 객체 안에 묶어서 "한 명 = 한 덩어리" 로 다뤄요.
-// 이번 단계에서는 데이터(필드)와 그것을 채우는 생성자만 만들어요.
-// (행동을 담는 메서드는 다음 시간에 추가합니다.)
+// 데이터(필드)와 생성자에 더해, 그 데이터로 무엇을 하는지(추천 점수·등급 계산)도
+// 이제 객체 스스로가 담당해요. 필드는 private 으로 숨기고 getter/setter 로만 드나들어요.
 public class Member {
+
+    // 지금까지 생성된 전체 회원 수 — 객체마다 따로가 아니라 클래스에 하나뿐인 값(모든 객체가 공유)
+    static int totalMembers = 0;
 
     // 한 사람을 이루는 다섯 가지 정보 — 이제 private 으로 숨겨 직접 접근을 막아요
     private String username;       // 사용자 이름
@@ -18,6 +21,7 @@ public class Member {
     // 기본 생성자 — 아무 값도 받지 않고 빈 객체를 만들어요.
     // 이때 필드는 각 타입의 기본값(문자열은 null, 숫자는 0)으로 채워져요.
     public Member() {
+        totalMembers++;
     }
 
     // 매개변수 생성자 — 다섯 가지 정보를 한 번에 받아 객체를 완성해요.
@@ -28,6 +32,7 @@ public class Member {
         this.posts = posts;
         this.mutualFriends = mutualFriends;
         this.daysActive = daysActive;
+        totalMembers++;
     }
 
     // 추천 점수 — 이제 인자 없이 자기 자신(this)의 필드를 직접 써요 (지난 시간엔 MemberDemo 밖에 있었음)
@@ -83,5 +88,10 @@ public class Member {
             return;
         }
         this.followers = followers;
+    }
+
+    // static 메서드 — 객체 없이 클래스 이름(Member.getTotalMembers())으로 부를 수 있어요
+    public static int getTotalMembers() {
+        return totalMembers;
     }
 }

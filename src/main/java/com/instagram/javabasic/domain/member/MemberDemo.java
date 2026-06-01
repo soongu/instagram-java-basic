@@ -56,6 +56,10 @@ public class MemberDemo {
                 System.out.println("추천 점수 : " + score + "점 → " + member.grade());
             }
         }
+
+        // static 값 시연 — 객체 없이 클래스 이름으로 전체 회원 수를 읽어요
+        System.out.println();
+        System.out.println("지금까지 생성된 전체 회원 수: " + Member.getTotalMembers() + "명");
     }
 
     // 1000 이상이면 "1.2K" 처럼 줄여서 보여줘요 — 지난 시간 그대로

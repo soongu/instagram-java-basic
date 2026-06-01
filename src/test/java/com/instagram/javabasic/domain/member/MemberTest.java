@@ -52,6 +52,20 @@ class MemberTest {
     }
 
     @Test
+    @DisplayName("getTotalMembers: 객체를 N개 만들면 전체 회원 수가 N만큼 늘어난다")
+    void totalMembers_increasesByNumberOfCreatedObjects() {
+        // JVM 이 누적하는 값이라 절대값이 아니라 증가량(delta)으로 검증해요
+        int before = Member.getTotalMembers();
+
+        new Member();
+        new Member("jaehoon_dev", 1240, 42, 8, 120);
+        new Member("minji_cafe", 8500, 150, 23, 365);
+
+        int after = Member.getTotalMembers();
+        assertEquals(3, after - before);
+    }
+
+    @Test
     @DisplayName("calculateRecommendScore: jaehoon_dev 는 12+8+80+4 = 104점 (this 필드 사용)")
     void calculateRecommendScore_jaehoon() {
         Member jaehoon = new Member("jaehoon_dev", 1240, 42, 8, 120);
