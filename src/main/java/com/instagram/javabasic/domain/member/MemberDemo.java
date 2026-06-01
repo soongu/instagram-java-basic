@@ -1,10 +1,10 @@
 package com.instagram.javabasic.domain.member;
 
 // com/instagram/javabasic/domain/member/MemberDemo.java
-// 지난 시간 평행 배열로 만들었던 사용자 관리 미니 분석기를,
-// 이번엔 Member 객체 배열(Member[]) 로 다시 만들어요.
-// 가장 큰 변화: 추천 점수 계산이 매개변수 다섯 개 대신 Member 한 개만 받아요.
-// 같은 데이터 → 같은 결과가 나오도록 가중치와 등급 경계는 지난 시간과 똑같이 유지했어요.
+// 지난 시간엔 추천 점수 계산이 MemberDemo 안의 static 메서드였는데,
+// 이번엔 그 계산을 Member 객체 스스로가 하도록 옮겼어요 (member.calculateRecommendScore()).
+// 또 필드가 private 으로 숨겨졌기 때문에, 값을 꺼낼 땐 getter(member.getFollowers() 등)를 써요.
+// 같은 데이터 → 같은 결과가 나오도록 가중치와 등급 경계는 그대로 유지했어요.
 public class MemberDemo {
 
     public static void main(String[] args) {
@@ -28,8 +28,8 @@ public class MemberDemo {
             int[] topIndexes = findTopFollowers(members, 3);
             for (int rank = 0; rank < topIndexes.length; rank++) {
                 int idx = topIndexes[rank];
-                System.out.println((rank + 1) + "위  @" + members[idx].username
-                        + "  (팔로워 " + formatFollowers(members[idx].followers) + ")");
+                System.out.println((rank + 1) + "위  @" + members[idx].getUsername()
+                        + "  (팔로워 " + formatFollowers(members[idx].getFollowers()) + ")");
             }
 
             System.out.println();
@@ -43,17 +43,17 @@ public class MemberDemo {
                 System.out.println("'" + target + "' 사용자를 찾을 수 없어요.");
                 System.out.println("등록된 사용자: ");
                 for (int i = 0; i < members.length; i++) {
-                    System.out.println("  - " + members[i].username);
+                    System.out.println("  - " + members[i].getUsername());
                 }
             } else {
                 Member member = members[idx];
-                int score = calculateRecommendScore(member);
-                System.out.println("=== @" + member.username + " 상세 정보 ===");
-                System.out.println("팔로워   : " + formatFollowers(member.followers));
-                System.out.println("게시물   : " + member.posts + "개");
-                System.out.println("함께 아는 친구: " + member.mutualFriends + "명");
-                System.out.println("활동 일수 : " + member.daysActive + "일");
-                System.out.println("추천 점수 : " + score + "점 → " + classifyScore(score));
+                int score = member.calculateRecommendScore();
+                System.out.println("=== @" + member.getUsername() + " 상세 정보 ===");
+                System.out.println("팔로워   : " + formatFollowers(member.getFollowers()));
+                System.out.println("게시물   : " + member.getPosts() + "개");
+                System.out.println("함께 아는 친구: " + member.getMutualFriends() + "명");
+                System.out.println("활동 일수 : " + member.getDaysActive() + "일");
+                System.out.println("추천 점수 : " + score + "점 → " + member.grade());
             }
         }
     }
@@ -66,20 +66,20 @@ public class MemberDemo {
         return String.valueOf(count);
     }
 
-    // 전체 사용자를 한 명씩 순회하며 출력 — 객체 배열이라 member.username 으로 바로 꺼내요
+    // 전체 사용자를 한 명씩 순회하며 출력 — 필드가 private 이라 getter 로 꺼내요
     static void printAllMembers(Member[] members) {
         for (int i = 0; i < members.length; i++) {
             Member member = members[i];
-            System.out.println("@" + member.username
-                    + "  팔로워 " + formatFollowers(member.followers)
-                    + "  게시물 " + member.posts + "개");
+            System.out.println("@" + member.getUsername()
+                    + "  팔로워 " + formatFollowers(member.getFollowers())
+                    + "  게시물 " + member.getPosts() + "개");
         }
     }
 
     // 이름으로 사용자를 찾아 인덱스를 돌려줘요. 없으면 -1.
     static int searchMemberByName(Member[] members, String target) {
         for (int i = 0; i < members.length; i++) {
-            if (members[i].username.equals(target)) {
+            if (members[i].getUsername().equals(target)) {
                 return i;
             }
         }
@@ -98,7 +98,7 @@ public class MemberDemo {
                 if (used[i]) {
                     continue;  // 이미 뽑힌 사람은 건너뛰어요
                 }
-                if (maxIndex == -1 || members[i].followers > members[maxIndex].followers) {
+                if (maxIndex == -1 || members[i].getFollowers() > members[maxIndex].getFollowers()) {
                     maxIndex = i;
                 }
             }
@@ -108,38 +108,14 @@ public class MemberDemo {
         return result;
     }
 
-    // 추천 점수 계산 — 지난 시간엔 정보 네 개를 따로 받았지만,
-    // 이제 Member 한 개만 받아서 그 안에서 필요한 값을 꺼내 써요. 인자가 훨씬 깔끔해졌죠.
-    static int calculateRecommendScore(Member member) {
-        int score = 0;
-        score = score + member.followers / 100;     // 팔로워 100명당 1점
-        score = score + member.posts / 5;           // 게시물 5개당 1점
-        score = score + member.mutualFriends * 10;  // 함께 아는 친구는 가중치 큼 (1명당 10점)
-        score = score + member.daysActive / 30;     // 활동 30일당 1점
-        return score;
-    }
-
-    // 점수를 사람이 읽기 좋은 등급 문자열로 바꿔줘요 — 지난 시간 경계 그대로
-    static String classifyScore(int score) {
-        if (score >= 300) {
-            return "강력 추천";
-        } else if (score >= 150) {
-            return "추천";
-        } else if (score >= 70) {
-            return "보통";
-        } else {
-            return "관심 낮음";
-        }
-    }
-
-    // 종합 메서드 — Member 한 개를 calculateRecommendScore 에 넘기는 모습이 한결 단순해졌어요
+    // 종합 메서드 — 점수도 등급도 이제 Member 객체 스스로 계산해요
     static void printRecommendations(Member[] members) {
         for (int i = 0; i < members.length; i++) {
             Member member = members[i];
-            int score = calculateRecommendScore(member);
-            String grade = classifyScore(score);
-            System.out.println("@" + member.username
-                    + "  (팔로워 " + formatFollowers(member.followers) + ")"
+            int score = member.calculateRecommendScore();
+            String grade = member.grade();
+            System.out.println("@" + member.getUsername()
+                    + "  (팔로워 " + formatFollowers(member.getFollowers()) + ")"
                     + "  점수 " + score + "점"
                     + "  →  " + grade);
         }

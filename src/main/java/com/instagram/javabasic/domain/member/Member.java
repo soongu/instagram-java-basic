@@ -8,12 +8,12 @@ package com.instagram.javabasic.domain.member;
 // (행동을 담는 메서드는 다음 시간에 추가합니다.)
 public class Member {
 
-    // 한 사람을 이루는 다섯 가지 정보 — 지난 시간 평행 배열 다섯 개에 대응돼요
-    String username;       // 사용자 이름
-    int followers;         // 팔로워 수
-    int posts;             // 게시물 수
-    int mutualFriends;     // 함께 아는 친구 수
-    int daysActive;        // 활동 일수
+    // 한 사람을 이루는 다섯 가지 정보 — 이제 private 으로 숨겨 직접 접근을 막아요
+    private String username;       // 사용자 이름
+    private int followers;         // 팔로워 수
+    private int posts;             // 게시물 수
+    private int mutualFriends;     // 함께 아는 친구 수
+    private int daysActive;        // 활동 일수
 
     // 기본 생성자 — 아무 값도 받지 않고 빈 객체를 만들어요.
     // 이때 필드는 각 타입의 기본값(문자열은 null, 숫자는 0)으로 채워져요.
@@ -52,5 +52,36 @@ public class Member {
         } else {
             return "관심 낮음";
         }
+    }
+
+    // ===== 캡슐화: private 필드를 읽는(getter) 통로 =====
+    public String getUsername() {
+        return username;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public int getPosts() {
+        return posts;
+    }
+
+    public int getMutualFriends() {
+        return mutualFriends;
+    }
+
+    public int getDaysActive() {
+        return daysActive;
+    }
+
+    // setter — 값을 넣기 전에 검사할 수 있어요. 팔로워는 음수가 될 수 없으니 막아요.
+    public void setFollowers(int followers) {
+        if (followers < 0) {
+            System.out.println("팔로워 수는 음수가 될 수 없어요. 0으로 설정해요.");
+            this.followers = 0;
+            return;
+        }
+        this.followers = followers;
     }
 }

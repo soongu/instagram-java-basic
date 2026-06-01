@@ -13,23 +13,42 @@ class MemberTest {
     void defaultConstructor_initializesFieldsToDefaults() {
         Member member = new Member();
 
-        assertNull(member.username);
-        assertEquals(0, member.followers);
-        assertEquals(0, member.posts);
-        assertEquals(0, member.mutualFriends);
-        assertEquals(0, member.daysActive);
+        assertNull(member.getUsername());
+        assertEquals(0, member.getFollowers());
+        assertEquals(0, member.getPosts());
+        assertEquals(0, member.getMutualFriends());
+        assertEquals(0, member.getDaysActive());
     }
 
     @Test
-    @DisplayName("매개변수 생성자로 만든 객체는 전달한 값이 필드에 그대로 담긴다")
+    @DisplayName("매개변수 생성자로 만든 객체는 전달한 값이 getter 로 그대로 읽힌다")
     void parameterizedConstructor_assignsAllFields() {
         Member member = new Member("jaehoon_dev", 1240, 42, 8, 120);
 
-        assertEquals("jaehoon_dev", member.username);
-        assertEquals(1240, member.followers);
-        assertEquals(42, member.posts);
-        assertEquals(8, member.mutualFriends);
-        assertEquals(120, member.daysActive);
+        assertEquals("jaehoon_dev", member.getUsername());
+        assertEquals(1240, member.getFollowers());
+        assertEquals(42, member.getPosts());
+        assertEquals(8, member.getMutualFriends());
+        assertEquals(120, member.getDaysActive());
+    }
+
+    @Test
+    @DisplayName("setFollowers: 0 이상 값은 그대로 저장된다")
+    void setFollowers_acceptsNonNegative() {
+        Member member = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        member.setFollowers(2000);
+        assertEquals(2000, member.getFollowers());
+
+        member.setFollowers(0);
+        assertEquals(0, member.getFollowers());
+    }
+
+    @Test
+    @DisplayName("setFollowers: 음수가 들어오면 0으로 보정된다")
+    void setFollowers_clampsNegativeToZero() {
+        Member member = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        member.setFollowers(-50);
+        assertEquals(0, member.getFollowers());
     }
 
     @Test

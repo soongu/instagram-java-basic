@@ -20,28 +20,21 @@ class MemberDemoTest {
     }
 
     @Test
-    @DisplayName("calculateRecommendScore: jaehoon_dev 는 12+8+80+4 = 104점")
-    void calculateRecommendScore_jaehoon() {
-        Member jaehoon = new Member("jaehoon_dev", 1240, 42, 8, 120);
-        assertEquals(104, MemberDemo.calculateRecommendScore(jaehoon));
+    @DisplayName("회원의 추천 점수는 이제 객체 스스로 계산한다 (jaehoon 104, minji 357)")
+    void recommendScore_isComputedByMemberItself() {
+        assertEquals(104, new Member("jaehoon_dev", 1240, 42, 8, 120).calculateRecommendScore());
+        assertEquals(357, new Member("minji_cafe", 8500, 150, 23, 365).calculateRecommendScore());
     }
 
     @Test
-    @DisplayName("calculateRecommendScore: minji_cafe 는 85+30+230+12 = 357점")
-    void calculateRecommendScore_minji() {
-        Member minji = new Member("minji_cafe", 8500, 150, 23, 365);
-        assertEquals(357, MemberDemo.calculateRecommendScore(minji));
-    }
-
-    @Test
-    @DisplayName("classifyScore: 경계값 300/150/70 기준 등급이 갈린다")
-    void classifyScore_boundaries() {
-        assertEquals("강력 추천", MemberDemo.classifyScore(357));
-        assertEquals("강력 추천", MemberDemo.classifyScore(300));
-        assertEquals("추천", MemberDemo.classifyScore(150));
-        assertEquals("보통", MemberDemo.classifyScore(104));
-        assertEquals("보통", MemberDemo.classifyScore(70));
-        assertEquals("관심 낮음", MemberDemo.classifyScore(69));
+    @DisplayName("findTopFollowers/searchMemberByName 은 getter 로 비교해도 동작이 같다")
+    void utilityMethods_workWithGetters() {
+        Member[] members = sampleMembers();
+        // 검색은 username getter 로 비교
+        assertEquals(1, MemberDemo.searchMemberByName(members, "minji_cafe"));
+        // 상위 정렬은 followers getter 로 비교
+        int[] top = MemberDemo.findTopFollowers(members, 1);
+        assertEquals(4, top[0]); // wooseok99(15800)
     }
 
     @Test
