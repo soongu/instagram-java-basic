@@ -29,4 +29,28 @@ public class Member {
         this.mutualFriends = mutualFriends;
         this.daysActive = daysActive;
     }
+
+    // 추천 점수 — 이제 인자 없이 자기 자신(this)의 필드를 직접 써요 (지난 시간엔 MemberDemo 밖에 있었음)
+    public int calculateRecommendScore() {
+        int score = 0;
+        score = score + this.followers / 100;     // 팔로워 100명당 1점
+        score = score + this.posts / 5;           // 게시물 5개당 1점
+        score = score + this.mutualFriends * 10;  // 함께 아는 친구 1명당 10점
+        score = score + this.daysActive / 30;     // 활동 30일당 1점
+        return score;
+    }
+
+    // 등급 — 같은 객체의 calculateRecommendScore() 를 다시 불러서 판정해요
+    public String grade() {
+        int score = calculateRecommendScore();
+        if (score >= 300) {
+            return "강력 추천";
+        } else if (score >= 150) {
+            return "추천";
+        } else if (score >= 70) {
+            return "보통";
+        } else {
+            return "관심 낮음";
+        }
+    }
 }
