@@ -35,4 +35,4 @@ build/
 hs_err_pid*
 replay_pid*
 
-.omc/
+.omc/.DS_Store
