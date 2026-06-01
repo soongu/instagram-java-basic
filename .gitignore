@@ -36,3 +36,7 @@ hs_err_pid*
 replay_pid*
 
 .omc/.DS_Store
+
+# OS / OMC noise
+.DS_Store
+.omc/
