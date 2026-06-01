@@ -26,6 +26,12 @@ public class AdminMember extends Member {
         return "[관리자] " + getUsername() + " 가 게시물 " + postId + " 을(를) 삭제했어요.";
     }
 
+    // 관리자만의 또 다른 행동 — 부모(Member)에 없는 새 행동이라 @Override 를 붙이지 않아요.
+    // 여기서도 username 은 부모의 public getter(getUsername())로 읽어요.
+    public String suspendMember(String targetUsername) {
+        return "[관리자] @" + getUsername() + " 가 @" + targetUsername + " 을(를) 정지시켰어요.";
+    }
+
     // 오버라이딩 — 부모의 점수 계산을 super 로 그대로 쓰고, 관리자 보너스 50점을 더해요.
     @Override
     public int calculateRecommendScore() {

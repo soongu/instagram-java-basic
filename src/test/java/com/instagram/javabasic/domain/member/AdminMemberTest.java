@@ -35,6 +35,13 @@ class AdminMemberTest {
     }
 
     @Test
+    @DisplayName("suspendMember: 정지 안내 문자열을 돌려준다 (부모에 없는 새 행동)")
+    void suspendMember_returnsMessage() {
+        AdminMember admin = new AdminMember("jaehoon_dev", 1240, 42, 8, 120, "콘텐츠 관리자");
+        assertEquals("[관리자] @jaehoon_dev 가 @spammer99 을(를) 정지시켰어요.", admin.suspendMember("spammer99"));
+    }
+
+    @Test
     @DisplayName("calculateRecommendScore 오버라이딩: 부모 점수 + 50 (104 -> 154)")
     void calculateRecommendScore_addsAdminBonus() {
         AdminMember admin = new AdminMember("jaehoon_dev", 1240, 42, 8, 120, "콘텐츠 관리자");
