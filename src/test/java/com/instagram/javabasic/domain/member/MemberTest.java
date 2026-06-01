@@ -1,7 +1,9 @@
 package com.instagram.javabasic.domain.member;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -116,5 +118,44 @@ class MemberTest {
     void grade_low() {
         assertEquals("관심 낮음", new Member("d", 6900, 0, 0, 0).grade());  // 69
         assertEquals("관심 낮음", new Member("d2", 0, 0, 0, 0).grade());    // 0
+    }
+
+    @Test
+    @DisplayName("toString: 사람 친화적인 형식으로 출력된다")
+    void toString_humanReadableFormat() {
+        Member jaehoon = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        assertEquals("@jaehoon_dev (팔로워 1240, 점수 104점)", jaehoon.toString());
+    }
+
+    @Test
+    @DisplayName("equals: username 이 같은 두 객체는 같다고 본다")
+    void equals_sameUsername_isEqual() {
+        Member a = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        Member b = new Member("jaehoon_dev", 9999, 1, 0, 1);  // 다른 스탯이어도 username 같으면 같음
+        assertTrue(a.equals(b));
+    }
+
+    @Test
+    @DisplayName("equals: username 이 다르면 다르다고 본다")
+    void equals_differentUsername_isNotEqual() {
+        Member a = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        Member b = new Member("minji_cafe", 1240, 42, 8, 120);
+        assertFalse(a.equals(b));
+    }
+
+    @Test
+    @DisplayName("equals: 자기 자신과는 같고(this==obj), null 과는 다르다")
+    void equals_selfTrue_nullFalse() {
+        Member a = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        assertTrue(a.equals(a));
+        assertFalse(a.equals(null));
+    }
+
+    @Test
+    @DisplayName("equals: 타입이 다르면(getClass 다름) 다르다고 본다")
+    void equals_differentClass_isNotEqual() {
+        Member member = new Member("jaehoon_dev", 1240, 42, 8, 120);
+        AdminMember admin = new AdminMember("jaehoon_dev", 1240, 42, 8, 120, "콘텐츠 관리자");
+        assertFalse(member.equals(admin));
     }
 }

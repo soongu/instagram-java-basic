@@ -94,4 +94,22 @@ public class Member {
     public static int getTotalMembers() {
         return totalMembers;
     }
+
+    // toString — 객체를 그대로 출력하면 알아보기 힘든 주소(@1b6d3586)가 찍혀요.
+    // 이 메서드를 새로 정의(오버라이딩)하면 우리가 원하는 사람 친화적인 글로 바뀌어요.
+    // username 과 followers 는 private 이지만 같은 클래스 안이라 직접 쓸 수 있어요.
+    @Override
+    public String toString() {
+        return "@" + username + " (팔로워 " + followers + ", 점수 " + calculateRecommendScore() + "점)";
+    }
+
+    // equals — 두 객체가 "같은 사람인가" 를 username 기준으로 비교해요.
+    // 기본 동작은 메모리 주소 비교라서, 값으로 같은지 보려면 이렇게 새로 정의해요.
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Member other = (Member) obj;
+        return username != null && username.equals(other.username);
+    }
 }
