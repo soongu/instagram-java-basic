@@ -1,12 +1,18 @@
 package com.instagram.javabasic.domain.member;
 
+import com.instagram.javabasic.domain.post.Post;
+
 // com/instagram/javabasic/domain/member/Member.java
 // 인스타 추천 사용자 한 명을 표현하는 클래스예요.
 // 지난 시간엔 한 사람의 정보가 평행 배열 다섯 개에 흩어져 있었는데,
 // 이제 그 다섯 가지를 한 객체 안에 묶어서 "한 명 = 한 덩어리" 로 다뤄요.
 // 데이터(필드)와 생성자에 더해, 그 데이터로 무엇을 하는지(추천 점수·등급 계산)도
 // 이제 객체 스스로가 담당해요. 필드는 private 으로 숨기고 getter/setter 로만 드나들어요.
+// 이번 시간엔 한 사람이 "쓴 글들" 과 "팔로우하는 사람들" 을 배열로 직접 안고 있도록 넓혀요.
 public class Member {
+
+    // 묶음 배열의 처음 크기예요. 작성한 글·팔로잉을 이만큼까지 담아요.
+    private static final int CAPACITY = 16;
 
     // 지금까지 생성된 전체 회원 수 — 객체마다 따로가 아니라 클래스에 하나뿐인 값(모든 객체가 공유)
     static int totalMembers = 0;
@@ -17,6 +23,14 @@ public class Member {
     private int posts;             // 게시물 수
     private int mutualFriends;     // 함께 아는 친구 수
     private int daysActive;        // 활동 일수
+
+    // 이 사람이 쓴 글들 — 배열에 모으고, 몇 개 찼는지 카운터로 세요(1:N)
+    private Post[] writtenPosts = new Post[CAPACITY];
+    private int writtenPostCount = 0;
+
+    // 이 사람이 팔로우하는 사람들 — 같은 방식(배열 + 카운터)으로 모아요
+    private Member[] following = new Member[CAPACITY];
+    private int followingCount = 0;
 
     // 기본 생성자 — 아무 값도 받지 않고 빈 객체를 만들어요.
     // 이때 필드는 각 타입의 기본값(문자열은 null, 숫자는 0)으로 채워져요.
@@ -93,6 +107,57 @@ public class Member {
     // static 메서드 — 객체 없이 클래스 이름(Member.getTotalMembers())으로 부를 수 있어요
     public static int getTotalMembers() {
         return totalMembers;
+    }
+
+    // ===== 작성한 글 묶음(1:N) =====
+
+    // 이 사람이 쓴 글 하나를 묶음에 더해요. 자리가 차면 더 담지 않고 넘어가요.
+    public void addWrittenPost(Post p) {
+        if (writtenPostCount >= writtenPosts.length) {
+            System.out.println("작성 글 묶음이 가득 찼어요. 더 담지 않아요.");
+            return;
+        }
+        writtenPosts[writtenPostCount] = p;
+        writtenPostCount++;
+    }
+
+    public int getWrittenPostCount() {
+        return writtenPostCount;
+    }
+
+    public Post getWrittenPost(int index) {
+        return writtenPosts[index];
+    }
+
+    // ===== 팔로잉 묶음(1:N) =====
+
+    // 다른 회원을 팔로우해요. 팔로잉 묶음에 더하고, 자리가 차면 넘어가요.
+    public void follow(Member target) {
+        if (followingCount >= following.length) {
+            System.out.println("팔로잉 묶음이 가득 찼어요. 더 담지 않아요.");
+            return;
+        }
+        following[followingCount] = target;
+        followingCount++;
+    }
+
+    public int getFollowingCount() {
+        return followingCount;
+    }
+
+    public Member getFollowing(int index) {
+        return following[index];
+    }
+
+    // 이미 그 사람을 팔로우하고 있는지 — 묶음을 처음부터 훑어 equals 로 비교해요.
+    // Member.equals 는 username 기준이라, 이름이 같으면 같은 사람으로 봐요.
+    public boolean isFollowing(Member target) {
+        for (int i = 0; i < followingCount; i++) {
+            if (following[i].equals(target)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // toString — 객체를 그대로 출력하면 알아보기 힘든 주소(@1b6d3586)가 찍혀요.
