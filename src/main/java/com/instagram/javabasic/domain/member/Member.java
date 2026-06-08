@@ -1,5 +1,7 @@
 package com.instagram.javabasic.domain.member;
 
+import java.util.Objects;
+
 import com.instagram.javabasic.domain.post.Post;
 
 // com/instagram/javabasic/domain/member/Member.java
@@ -176,5 +178,14 @@ public class Member {
         if (obj == null || getClass() != obj.getClass()) return false;
         Member other = (Member) obj;
         return username != null && username.equals(other.username);
+    }
+
+    // hashCode — equals 와 짝꿍이에요. "두 객체가 equals 로 같다면 hashCode 도 같아야 한다" 는 약속이 있어요.
+    // HashSet·HashMap 은 먼저 hashCode 로 "어느 칸에 둘지" 를 정한 뒤 그 칸에서 equals 로 같은지 확인해요.
+    // 그래서 equals 를 username 기준으로 정의했으면, hashCode 도 username 으로 맞춰 줘야
+    // 이름이 같은 사람을 같은 칸으로 보내서 중복으로 걸러낼 수 있어요.
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 }
