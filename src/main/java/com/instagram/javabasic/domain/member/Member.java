@@ -26,6 +26,9 @@ public class Member {
     private int mutualFriends;     // 함께 아는 친구 수
     private int daysActive;        // 활동 일수
 
+    // 이메일 — 회원가입 때 "한 사람당 하나" 로 쓰는 값이에요. 같은 이메일로 두 번 가입하는 걸 막는 열쇠가 돼요.
+    private String email;
+
     // 이 사람이 쓴 글들 — 배열에 모으고, 몇 개 찼는지 카운터로 세요(1:N)
     private Post[] writtenPosts = new Post[CAPACITY];
     private int writtenPostCount = 0;
@@ -48,6 +51,14 @@ public class Member {
         this.posts = posts;
         this.mutualFriends = mutualFriends;
         this.daysActive = daysActive;
+        totalMembers++;
+    }
+
+    // 회원가입용 생성자 — 이름과 이메일만 받아 새 회원을 만들어요.
+    // 가입 직후엔 팔로워·게시물 수가 모두 0 이라, 나머지 숫자 정보는 기본값(0)으로 둬요.
+    public Member(String username, String email) {
+        this.username = username;
+        this.email = email;
         totalMembers++;
     }
 
@@ -78,6 +89,14 @@ public class Member {
     // ===== 캡슐화: private 필드를 읽는(getter) 통로 =====
     public String getUsername() {
         return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getFollowers() {

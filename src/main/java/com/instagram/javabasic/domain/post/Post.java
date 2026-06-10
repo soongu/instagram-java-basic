@@ -113,6 +113,12 @@ public class Post implements Commentable {
         this.status = status;
     }
 
+    // 게시물 내용을 새 글로 바꿔요. 지금까진 한 번 쓰면 못 고쳤는데, 수정 기능을 위해 통로를 하나 열어요.
+    // "고쳐도 되는 상태인가" 같은 규칙은 여기서 따지지 않아요 — 그 판단은 게시물을 다루는 서비스가 맡아요.
+    public void editContent(String newContent) {
+        this.content = newContent;
+    }
+
     // 이 게시물을 지금 공유할 수 있는지 — 판단 규칙은 상태(enum)에게 맡겨요.
     // Post 는 "공유 가능?" 만 묻고, 진짜 규칙은 PostStatus 안에 모여 있어요.
     public boolean canBeShared() {
