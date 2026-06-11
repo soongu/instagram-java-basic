@@ -11,18 +11,18 @@ import com.instagram.javabasic.domain.post.Post;
 // 공유 변수를 건드리면 결과가 들쭉날쭉해질 수 있어요. "기본은 순차, 병렬은 신중하게" 예요.
 public class ParallelStreamDemo {
 
-    // 순차 합산 — 한 갈래로 차례차례 더해요.
+    // 순차 합산 — 한 갈래로 차례차례 더해요. Day 27 에서 배운 reduce 를 그대로 써요.
     public static int sequentialTotalLikes(List<Post> posts) {
         return posts.stream()
-                .mapToInt(Post::getLikeCount)
-                .sum();
+                .map(Post::getLikeCount)
+                .reduce(0, Integer::sum);
     }
 
-    // 병렬 합산 — .parallel() 로 여러 갈래로 나눠 더해요. 합산은 순서가 상관없어 결과가 같아요.
+    // 병렬 합산 — .parallelStream() 으로 여러 갈래로 나눠 더해요. 합산은 순서가 상관없어 결과가 같아요.
     public static int parallelTotalLikes(List<Post> posts) {
         return posts.parallelStream()
-                .mapToInt(Post::getLikeCount)
-                .sum();
+                .map(Post::getLikeCount)
+                .reduce(0, Integer::sum);
     }
 
     public static void main(String[] args) {
