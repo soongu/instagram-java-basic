@@ -1,0 +1,1848 @@
+metadata:
+  schemaVersion: 1
+  contentStatus: DRAFT
+  locale: ko-KR
+  sourceCanonRef: STUDIO9_IMPLEMENTATION_CANON_v1.md
+  workingBriefRef: CLUEROOM_SCENARIO2_WORKING_BRIEF_v15.md
+  canonicalCodeRef: CANONICAL_CODES.md
+  assetMapRef: asset-map.csv
+  assetKeyPattern: official/studio9/v1/{category}/{canonicalCode}.png
+  draftScope: BASE_CONTENT_WITH_ASSETS_VARIANTS_UNLOCK_NPC_SCORING_DRAFT
+
+scenario:
+  code: SCENARIO_STUDIO9
+  version: "1.0.0"
+  title: "스튜디오 9의 마지막 컷"
+  description: "스튜디오 9 루프탑 세트에서 벌어진 촬영장 추락 미스터리"
+  synopsis: "모두가 보고 있었지만 아무도 보지 못한 3.4초의 과노출 속에서, 백도윤은 자신이 만든 마지막 컷에 삼켜졌다."
+  genre: "촬영장 미스터리 / 산업재해 위장극 / 미디어 현장 감식 추리"
+  difficulty: NORMAL_PLUS
+  estimatedPlayTimeMinutes: 30
+  scenarioType: OFFICIAL
+  visibility: PUBLIC
+  status: DRAFT
+  culpritMode: RANDOM_VARIANT
+  deductionMode: PHYSICAL_EVIDENCE_DEDUCTION
+  mapMode: REFERENCE_ONLY
+  evidenceMode: PHASE_BASED_EVIDENCE_TAB
+  coverAssetKey: official/studio9/v1/scenario/SCENARIO_STUDIO9.cover.png
+  mapAssetKey: official/studio9/v1/scenario/SCENARIO_STUDIO9.map.png
+
+victim:
+  code: VICTIM_BAEK_DOYOON
+  name: "백도윤"
+  roleLabel: "OTT 드라마 <스튜디오 9> 총괄 감독 / 쇼러너"
+  publicProfile: "천재 감독, 스타 제조기, 흥행 보증수표로 알려진 인물"
+  deathLocationCode: LOC_ROOFTOP_SET
+  discoveredAtText: ""
+  publicCauseOfDeathText: "루프탑 세트 테크 리허설 중 추락사"
+  portraitAssetKey: official/studio9/v1/victims/VICTIM_BAEK_DOYOON.png
+
+locations:
+  - code: LOC_ROOFTOP_SET
+    name: "루프탑 세트"
+    description: "마지막 컷 리허설이 진행된 주 무대. MARK 9, 난간, 안전장치, 조명 직격축이 얽힌다."
+    imageAssetKey: null
+    sortOrder: 10
+  - code: LOC_MONITOR_ZONE
+    name: "모니터 존"
+    description: "배우와 제작진이 리허설 화면을 확인하던 구역."
+    imageAssetKey: null
+    sortOrder: 20
+  - code: LOC_PROMPTER_STATION
+    name: "프롬프터 / 인이어 큐 스테이션"
+    description: "프롬프터 문구와 인이어 큐를 관리하는 구역."
+    imageAssetKey: null
+    sortOrder: 30
+  - code: LOC_LIGHTING_CONSOLE
+    name: "조명 콘솔 / 촬영 모니터 구역"
+    description: "Cue 9 백라이트와 카메라 노출을 조정하는 구역."
+    imageAssetKey: null
+    sortOrder: 40
+  - code: LOC_RIGGING_ZONE
+    name: "안전 리깅 구역"
+    description: "하네스, 난간 보조 잠금장치, 안전 결착 확인이 이루어지는 구역."
+    imageAssetKey: null
+    sortOrder: 50
+  - code: LOC_PRODUCTION_DESK
+    name: "제작 데스크 / 외주 정산 구역"
+    description: "장비 발주서, 예산 메일, 보험 문서가 남아 있는 구역."
+    imageAssetKey: null
+    sortOrder: 60
+  - code: LOC_DRESSING_ROOM_ACTOR
+    name: "주연배우 대기실"
+    description: "서이라의 개인 대기실. 검은 마킹 테이프 조각이 발견된다."
+    imageAssetKey: null
+    sortOrder: 70
+  - code: LOC_DRESSING_ROOM_SUPPORTING
+    name: "조연배우 대기실"
+    description: "민루아의 대기 공간. 신발 밑창 겔 흔적과 캐스팅 거래 메시지가 연결된다."
+    imageAssetKey: null
+    sortOrder: 80
+  - code: LOC_SCRIPT_SUPERVISOR_DESK
+    name: "스크립터 기록 데스크"
+    description: "고은별이 연속성 노트와 B-roll 백업 드라이브를 관리한 장소."
+    imageAssetKey: null
+    sortOrder: 90
+  - code: LOC_EQUIPMENT_STORAGE
+    name: "장비 보관실"
+    description: "확산 필터, 안전 클립, 예비 장비 등이 보관되는 장소."
+    imageAssetKey: null
+    sortOrder: 100
+
+characters:
+  - code: SUSPECT_ACTOR
+    name: "서이라"
+    roleLabel: "주연배우"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "백도윤이 만든 톱스타. 대기실과 리허설 동선상 MARK 9 위치를 확인할 수 있다."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/SUSPECT_ACTOR.png
+    sortOrder: 10
+  - code: SUSPECT_WRITER
+    name: "윤채린"
+    roleLabel: "메인 작가"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "작품의 메인 작가. 프롬프터와 인이어 지시 문구, 최종 블로킹 수정에 관여할 수 있다."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/SUSPECT_WRITER.png
+    sortOrder: 20
+  - code: SUSPECT_LIGHTING_DP
+    name: "류현규"
+    roleLabel: "조명감독·촬영감독"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "백도윤의 영상미를 만들어온 기술 파트너. Cue 9 조명 세팅과 확산 필터에 접근할 수 있다."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/SUSPECT_LIGHTING_DP.png
+    sortOrder: 30
+  - code: SUSPECT_STUNT_COORDINATOR
+    name: "남기준"
+    roleLabel: "액션감독"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "루프탑 세트의 안전 책임자. 하네스, 난간 보조 잠금장치, 안전 점검표를 관리한다."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/SUSPECT_STUNT_COORDINATOR.png
+    sortOrder: 40
+  - code: RED_HERRING_PRODUCER
+    name: "강태오"
+    roleLabel: "제작총괄"
+    characterType: PERMANENT_RED_HERRING
+    culpritEligible: false
+    publicProfile: "제작비와 외주 장비 계약을 총괄하는 제작 책임자."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/RED_HERRING_PRODUCER.png
+    sortOrder: 50
+  - code: RED_HERRING_SUPPORTING_ACTOR
+    name: "민루아"
+    roleLabel: "조연배우"
+    characterType: PERMANENT_RED_HERRING
+    culpritEligible: false
+    publicProfile: "백도윤이 새로 밀어주던 조연배우. 주연배우 대기 동선 근처에 접근할 수 있다."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/RED_HERRING_SUPPORTING_ACTOR.png
+    sortOrder: 60
+  - code: WITNESS_SCRIPT_SUPERVISOR
+    name: "고은별"
+    roleLabel: "스크립터"
+    characterType: NEUTRAL_WITNESS
+    culpritEligible: false
+    publicProfile: "촬영 연속성, B-roll 동기화, 기록 백업을 담당하는 스크립터."
+    publicAlibi: ""
+    personalityTone: ""
+    portraitAssetKey: official/studio9/v1/characters/WITNESS_SCRIPT_SUPERVISOR.png
+    sortOrder: 70
+
+evidences:
+  - code: EVIDENCE_ROOFTOP_SET_SCENE_PHOTO
+    title: "루프탑 세트 현장 사진"
+    category: SCENE
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: CONTEXT
+    oneLine: "루프탑 세트 현장 사진"
+    baseDetail: "마지막 컷 리허설이 진행된 루프탑 세트 현장 사진. MARK 9, 난간, 안전장치, 조명 방향의 상대 위치를 확인할 수 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_ROOFTOP_SET_SCENE_PHOTO.png
+    sortOrder: 10
+  - code: EVIDENCE_MARK9_CURRENT_POSITION_PHOTO
+    title: "사건 당시 MARK 9 위치 사진"
+    category: PHYSICAL
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: CONTEXT
+    oneLine: "사건 당시 MARK 9 위치 사진"
+    baseDetail: "사건 당시 바닥에 남아 있던 MARK 9 위치 사진. 백도윤이 어느 지점을 안전 위치로 인식했는지 비교하는 기준점이다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MARK9_CURRENT_POSITION_PHOTO.png
+    sortOrder: 20
+  - code: EVIDENCE_STAGE_BLOCKING_OVERVIEW
+    title: "루프탑 블로킹 배치도"
+    category: MAP
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: CONTEXT
+    oneLine: "루프탑 블로킹 배치도"
+    baseDetail: "루프탑 세트의 블로킹 배치도. 배우 동선, 카메라 시야, 난간과 MARK 9의 거리를 함께 확인할 수 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_STAGE_BLOCKING_OVERVIEW.png
+    sortOrder: 30
+  - code: EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST
+    title: "백도윤의 Actor POV 체크리스트"
+    category: DOCUMENT
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "백도윤의 Actor POV 체크리스트"
+    baseDetail: "백도윤의 손글씨가 남은 최종 컷 점검표. MARK 9에서 배우 시야, 프롬프터 반사, 백라이트 진입 시 눈동선 확인 항목이 표시되어 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST.png
+    sortOrder: 40
+  - code: EVIDENCE_MASTER_TRIGGER_AUDIO
+    title: "“Roll. Cue 9.” 인터컴 음성"
+    category: AUDIO
+    unlockPhase: PHASE_1_BASIC_SCENE
+    locationCode: LOC_PROMPTER_STATION
+    baseRole: COMMON
+    oneLine: "“Roll. Cue 9.” 인터컴 음성"
+    baseDetail: "백도윤이 직접 “Roll. Cue 9.”라고 말한 인터컴 음성 기록. 마지막 컷 루틴이 시작된 기준 시점이다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MASTER_TRIGGER_AUDIO.png
+    sortOrder: 50
+  - code: EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE
+    title: "과노출 3.4초 프레임 시퀀스"
+    category: VISUAL
+    unlockPhase: PHASE_1_BASIC_SCENE
+    locationCode: LOC_MONITOR_ZONE
+    baseRole: COMMON
+    oneLine: "과노출 3.4초 프레임 시퀀스"
+    baseDetail: "Cue 9 직후 화면이 하얗게 날아간 3.4초 프레임 시퀀스. 모두가 보고 있었지만 실제 움직임을 놓친 구간이다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE.png
+    sortOrder: 60
+  - code: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    title: "현장 앰비언트 오디오 파편"
+    category: AUDIO
+    unlockPhase: PHASE_1_BASIC_SCENE
+    locationCode: LOC_PROMPTER_STATION
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "현장 앰비언트 오디오 파편"
+    baseDetail: "현장 마이크에 남은 앰비언트 오디오 파편. 화면 밖 장비음과 현장 반응을 보조적으로 비교할 수 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT.png
+    sortOrder: 70
+  - code: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    title: "기존 MARK 9 접착 잔여선"
+    category: PHYSICAL
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "기존 MARK 9 접착 잔여선"
+    baseDetail: "기존 MARK 9가 붙어 있던 자리로 보이는 접착 잔여선. 현재 위치와 비교하면 마킹이 옮겨졌는지 판단할 수 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE.png
+    sortOrder: 80
+  - code: EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE
+    title: "검은 마스킹 라인의 무광 겔 자국"
+    category: PHYSICAL
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: DIRTY_FAKE
+    oneLine: "검은 마스킹 라인의 무광 겔 자국"
+    baseDetail: "검은 마스킹 라인에 남은 무광 겔 자국. 미끄럼 또는 방해 흔적으로 보이지만, 다른 물리 흔적과 선후관계를 비교해야 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE.png
+    sortOrder: 90
+  - code: EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE
+    title: "조연배우 신발 밑창 겔 흔적"
+    category: PHYSICAL
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_DRESSING_ROOM_SUPPORTING
+    baseRole: DIRTY_FAKE
+    oneLine: "조연배우 신발 밑창 겔 흔적"
+    baseDetail: "조연배우 신발 밑창에서 발견된 겔 흔적. 민루아가 루프탑 동선에 접근했을 가능성을 보여준다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE.png
+    sortOrder: 100
+  - code: EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+    title: "저가형 안전 클립 파편"
+    category: PHYSICAL
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: DIRTY_FAKE
+    oneLine: "저가형 안전 클립 파편"
+    baseDetail: "현장에서 발견된 저가형 안전 클립 파편. 장비 품질 문제와 예산 절감 의혹을 만든다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT.png
+    sortOrder: 110
+  - code: EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER
+    title: "비승인 장비 교체 발주서"
+    category: DOCUMENT
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_PRODUCTION_DESK
+    baseRole: DIRTY_FAKE
+    oneLine: "비승인 장비 교체 발주서"
+    baseDetail: "비승인 장비 교체 발주서. 공식 안전 장비가 아닌 대체 부품이 현장에 들어왔을 가능성을 보여준다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER.png
+    sortOrder: 120
+  - code: EVIDENCE_HARNESS_LOCK_CHECK_PHOTO
+    title: "하네스 결착 확인 사진"
+    category: PHYSICAL
+    unlockPhase: PHASE_2_PHYSICAL_TRACE
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "하네스 결착 확인 사진"
+    baseDetail: "리허설 전 하네스 결착을 확인한 사진. 안전 절차가 겉으로는 수행되었는지 확인하는 자료다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_HARNESS_LOCK_CHECK_PHOTO.png
+    sortOrder: 130
+  - code: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    title: "프롬프터 반사 B-roll 스틸컷"
+    category: VISUAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_SCRIPT_SUPERVISOR_DESK
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "프롬프터 반사 B-roll 스틸컷"
+    baseDetail: "프롬프터 유리에 무언가 반사된 B-roll 스틸컷. 단독 정답지가 아니라 공식 대본과 Actor POV 체크리스트를 비교하게 하는 단서다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL.png
+    sortOrder: 140
+  - code: EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH
+    title: "최종 블로킹 대본 불일치"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_PROMPTER_STATION
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "최종 블로킹 대본 불일치"
+    baseDetail: "최종 블로킹 대본과 실제 리허설 동선이 어긋나는 지점을 보여주는 문서. 누가 움직임을 바꿨는지 추적하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH.png
+    sortOrder: 150
+  - code: EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO
+    title: "MAX-BLIND 손글씨 조명 메모"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_LIGHTING_CONSOLE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "MAX-BLIND 손글씨 조명 메모"
+    baseDetail: "MAX-BLIND라고 적힌 손글씨 조명 메모. Cue 9 조명 세팅이 평소보다 위험한 조건으로 조정되었는지 확인하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO.png
+    sortOrder: 160
+  - code: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    title: "비규격 확산 필터 프레임"
+    category: PHYSICAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_EQUIPMENT_STORAGE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "비규격 확산 필터 프레임"
+    baseDetail: "Cue 9 백라이트 하우징 안쪽에서 회수된 확산 필터 프레임. 표준 필터와 비슷하지만 모서리 절단면과 고정 홈이 미세하게 다르다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME.png
+    sortOrder: 170
+  - code: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    title: "안전 잠금부 비정상 마모 흔적"
+    category: PHYSICAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "안전 잠금부 비정상 마모 흔적"
+    baseDetail: "안전 잠금부에 남은 비정상 마모 흔적. 단순 추락 충격인지, 사전 훼손인지 구분해야 하는 물리 단서다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_WEAR_PATTERN.png
+    sortOrder: 180
+  - code: EVIDENCE_SAFETY_CHECKLIST_OVERWRITE
+    title: "안전 점검표 덮어쓰기 흔적"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "안전 점검표 덮어쓰기 흔적"
+    baseDetail: "안전 점검표에 남은 덮어쓰기 흔적. 점검 완료 표시가 실제 확인인지 사후 정리인지 의심하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SAFETY_CHECKLIST_OVERWRITE.png
+    sortOrder: 190
+  - code: EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE
+    title: "주연배우 대기실 검은 마킹 테이프 조각"
+    category: PHYSICAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_DRESSING_ROOM_ACTOR
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "주연배우 대기실 검은 마킹 테이프 조각"
+    baseDetail: "주연배우 대기실에서 발견된 검은 마킹 테이프 조각. MARK 9 테이프와 재질, 색, 접착 흔적을 비교할 수 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE.png
+    sortOrder: 200
+  - code: EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE
+    title: "조연배우 차기작 거래 메시지"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_DRESSING_ROOM_SUPPORTING
+    baseRole: MOTIVE_KEY
+    oneLine: "조연배우 차기작 거래 메시지"
+    baseDetail: "조연배우의 차기작 거래 메시지. 민루아가 서이라와 경쟁 관계에 있었고 방해 동기를 가질 수 있음을 보여준다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE.png
+    sortOrder: 210
+  - code: EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL
+    title: "보험·예산 조정 메일"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_PRODUCTION_DESK
+    baseRole: MOTIVE_KEY
+    oneLine: "보험·예산 조정 메일"
+    baseDetail: "보험과 예산 조정 관련 메일. 제작비와 안전 장비 교체가 왜 압박을 받았는지 보여주는 문서다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL.png
+    sortOrder: 220
+  - code: EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE
+    title: "주연배우 해외 계약 협박 메시지"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_DRESSING_ROOM_ACTOR
+    baseRole: MOTIVE_KEY
+    oneLine: "주연배우 해외 계약 협박 메시지"
+    baseDetail: "주연배우 해외 계약을 둘러싼 협박성 메시지. 백도윤과 서이라 사이의 권력관계를 보여준다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE.png
+    sortOrder: 230
+  - code: EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE
+    title: "오래된 원고와 크레딧 파일"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_PROMPTER_STATION
+    baseRole: MOTIVE_KEY
+    oneLine: "오래된 원고와 크레딧 파일"
+    baseDetail: "오래된 원고와 크레딧 파일. 윤채린이 백도윤에게 오래된 원한을 가질 수 있는 배경 자료다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE.png
+    sortOrder: 240
+  - code: EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT
+    title: "조명 사고 책임 보고서 초안"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_LIGHTING_CONSOLE
+    baseRole: MOTIVE_KEY
+    oneLine: "조명 사고 책임 보고서 초안"
+    baseDetail: "조명 사고 책임 보고서 초안. 류현규가 과거 사고 책임 문제로 압박받고 있었는지 확인하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT.png
+    sortOrder: 250
+  - code: EVIDENCE_OLD_STUNT_ACCIDENT_FILE
+    title: "과거 촬영 사고 은폐 파일"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: MOTIVE_KEY
+    oneLine: "과거 촬영 사고 은폐 파일"
+    baseDetail: "과거 촬영 사고 은폐 파일. 남기준과 안전 관리 책임 문제가 오래전부터 이어졌음을 보여준다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_OLD_STUNT_ACCIDENT_FILE.png
+    sortOrder: 260
+  - code: EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE
+    title: "스크립터 백업 드라이브"
+    category: PHYSICAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_SCRIPT_SUPERVISOR_DESK
+    baseRole: UNLOCK_KEY
+    oneLine: "스크립터 백업 드라이브"
+    baseDetail: "스크립터가 보관하던 백업 드라이브. 공식본과 다른 B-roll, 연속성 자료가 남아 있을 가능성을 만든다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE.png
+    sortOrder: 270
+  - code: EVIDENCE_EDITED_MAKING_REEL_EXPORT
+    title: "편집된 메이킹 릴 추출본"
+    category: VISUAL
+    unlockPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+    locationCode: LOC_SCRIPT_SUPERVISOR_DESK
+    baseRole: UNLOCK_KEY
+    oneLine: "편집된 메이킹 릴 추출본"
+    baseDetail: "편집된 메이킹 릴 추출본. 공식 공개본과 원본 현장 자료 사이에 차이가 있었는지 비교하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_EDITED_MAKING_REEL_EXPORT.png
+    sortOrder: 280
+  - code: EVIDENCE_CONTINUITY_SKETCH_NOTE
+    title: "연속성 스케치 노트"
+    category: DOCUMENT
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_SCRIPT_SUPERVISOR_DESK
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "연속성 스케치 노트"
+    baseDetail: "연속성 스케치 노트. 리허설 중 위치, 시야, 소품 상태의 미묘한 변화를 해석하게 하는 보조 자료다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_CONTINUITY_SKETCH_NOTE.png
+    sortOrder: 290
+  - code: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    title: "들뜬 MARK 9 테이프 끝"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: FATAL_LAYER_KEY
+    oneLine: "들뜬 MARK 9 테이프 끝"
+    baseDetail: "MARK 9 테이프의 한쪽 끝이 바닥에서 살짝 들떠 있다. 접착면 안쪽에는 투명한 겔 성분과 검은 바닥 먼지가 함께 말려 들어가 있다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL.png
+    sortOrder: 300
+  - code: EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL
+    title: "확대된 프롬프터 반사 스틸"
+    category: VISUAL
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_SCRIPT_SUPERVISOR_DESK
+    baseRole: FATAL_LAYER_KEY
+    oneLine: "확대된 프롬프터 반사 스틸"
+    baseDetail: "프롬프터 반사를 확대한 스틸. 공식 대본과 다른 지시 문구가 보이는지, 백도윤이 무엇을 보고 움직였는지 비교하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL.png
+    sortOrder: 310
+  - code: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    title: "변형된 확산 필터 클로즈업"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_EQUIPMENT_STORAGE
+    baseRole: FATAL_LAYER_KEY
+    oneLine: "변형된 확산 필터 클로즈업"
+    baseDetail: "필터 전체가 탄 것은 아니지만 프레임 가장자리 한쪽만 비정상적으로 휘어 있다. 해당 방향은 사건 당시 백라이트 조사 방향과 맞물린다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP.png
+    sortOrder: 320
+  - code: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    title: "안전 잠금부 클로즈업"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: FATAL_LAYER_KEY
+    oneLine: "안전 잠금부 클로즈업"
+    baseDetail: "안전 잠금부를 확대한 사진. 정상 사용 마모와 다른 손상 방향이 보이는지 확인해야 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_CLOSEUP.png
+    sortOrder: 330
+  - code: EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN
+    title: "무대 바닥 먼지와 마찰 패턴"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+    locationCode: LOC_ROOFTOP_SET
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "무대 바닥 먼지와 마찰 패턴"
+    baseDetail: "무대 바닥 먼지와 마찰 패턴. 피해자가 실제로 미끄러졌는지, 위험 위치로 유도되었는지 판단하는 보조 흔적이다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN.png
+    sortOrder: 340
+  - code: EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE
+    title: "루프탑 드라이 런 안전 수칙"
+    category: DOCUMENT
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_RIGGING_ZONE
+    baseRole: FATAL_LAYER_SUPPORT
+    oneLine: "루프탑 드라이 런 안전 수칙"
+    baseDetail: "루프탑 드라이 런 중에도 안전 결착과 잠금 확인이 필요하다는 수칙 문서. 사고가 단순 절차 누락인지 확인하게 한다."
+    imageAssetKey: official/studio9/v1/evidence/EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE.png
+    sortOrder: 350
+
+evidenceVariantStates:
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    role: FATAL_LAYER_KEY
+    detailAppend: |-
+      테이프 한쪽 끝이 무광 겔 때문에 들떠 있으며, 기존 접착 잔여선과 현재 MARK 9 위치가 난간 방향으로 어긋나 있다.
+      이는 겔 이후 누군가 MARK 9를 옮겨 붙였다는 물리적 선후관계를 만든다.
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    role: DIRTY_FAKE
+    detailAppend: "테이프 끝은 수상하지만, 기존 접착 잔여선과 치명 위치 이동이 완전히 닫히지 않는다. 이 판의 결정적 물리층은 프롬프터/인이어 지시 쪽에 있다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    role: DIRTY_FAKE
+    detailAppend: "테이프 상태는 수상하지만, 백도윤의 공간 인지를 무너뜨린 직접 물리층은 조명 장치 쪽이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    role: DIRTY_FAKE
+    detailAppend: "테이프와 겔은 위험한 선행 흔적이지만, 정상이라면 안전장비가 추락을 막았어야 한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    role: FATAL_LAYER_KEY
+    detailAppend: "기존 MARK 9 접착 잔여선과 현재 위치가 어긋나 있어 위치 표시가 사건 전 다시 붙여졌음을 보강한다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    role: DIRTY_FAKE
+    detailAppend: "기존 접착 잔여선은 수상하지만, 이 판에서는 공식 대본에 없는 프롬프터/인이어 지시가 직접 이동 원인이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    role: DIRTY_FAKE
+    detailAppend: "MARK 9 잔여선은 혼선을 만들지만, 3.4초 과노출과 비규격 필터 세팅을 설명하지 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    role: DIRTY_FAKE
+    detailAppend: "위치 표시는 위험 조건일 수 있으나, 정상 안전장비라면 추락을 막았어야 한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    role: DIRTY_FAKE
+    detailAppend: "프롬프터 반사는 수상하지만 MARK 9 재배치의 물리적 선후관계를 대체하지 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    role: FATAL_LAYER_KEY
+    detailAppend: "공식 대본에 없는 후퇴 지시가 프롬프터 유리에 흐릿하게 반사되어 Actor POV 확인 순간의 직접 유도 정황이 된다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    role: DIRTY_FAKE
+    detailAppend: "프롬프터 문구는 의심스럽지만 백도윤의 시야와 공간 인지를 무너뜨린 직접 원인은 조명 과노출이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    role: DIRTY_FAKE
+    detailAppend: "프롬프터 지시는 위험 조건이지만, 이 판에서는 주 안전장비가 실패한 이유를 설명해야 한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "현장 음향 파편은 긴장감을 만들지만 MARK 9 위치 조작의 물리 증거보다 결정력이 낮다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    role: FATAL_LAYER_KEY
+    detailAppend: "인이어/현장 음향 파편이 프롬프터 반사 문구와 결합되어 백도윤의 반사적 후퇴를 설명한다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "음향 자극은 수상하지만 3.4초 과노출과 비규격 필터 세팅을 직접 만들지는 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "청각 자극은 위험 조건일 수 있으나 안전 잠금부의 사전 손상 여부와 별도 층이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    role: DIRTY_FAKE
+    detailAppend: "비규격 필터는 수상하지만, 이 판의 치명 위치 이동은 MARK 9 접착 잔여선과 들뜬 테이프가 닫는다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    role: DIRTY_FAKE
+    detailAppend: "필터 교체 의심은 남지만, 배우를 직접 뒤로 움직인 원인은 프롬프터/인이어 지시다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    role: FATAL_LAYER_KEY
+    detailAppend: "겉보기에는 표준 필터와 유사하지만 모서리와 고정 홈이 달라 Cue 9 과노출 세팅의 물리 증거가 된다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    role: DIRTY_FAKE
+    detailAppend: "조명 필터는 위험 조건이지만, 정상 주 안전장비라면 추락을 막았어야 한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "변형된 필터는 수상하지만, MARK 9 위치 조작의 선후관계보다 직접성이 낮다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "필터 변형은 수상하지만 백도윤의 반사적 후퇴를 만든 프롬프터/인이어 층을 대체하지 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    role: FATAL_LAYER_KEY
+    detailAppend: "변형된 확산 필터 클로즈업은 Cue 9 과노출이 단순 장비 고장이 아니라 의도된 세팅이었음을 보강한다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "조명 장치 이상은 위험 조건이지만 주 안전 잠금부의 실패 원인을 설명하지 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "안전 잠금부 상태는 수상하지만, 백도윤이 위험 위치에 서게 된 MARK 9 위치 조작이 먼저 닫힌다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "잠금부 손상 의심은 남지만, 이 판의 최초 움직임은 프롬프터/인이어 지시에 의한 반사적 후퇴다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    role: DIRTY_FAKE
+    detailAppend: "잠금부는 수상하지만 3.4초 과노출이 백도윤의 공간 인지를 먼저 무너뜨린 층이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    role: FATAL_LAYER_KEY
+    detailAppend: "외관상 닫혀 있지만 클로즈업에서 내부 지지부 손상이 보여 주 안전장비가 버티지 못한 이유를 가리킨다."
+    proofDimensions:
+      - FATAL_LAYER
+  - variantCode: VARIANT_ACTOR
+    evidenceCode: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    role: DIRTY_FAKE
+    detailAppend: "비정상 마모는 수상하지만 MARK 9 재배치의 직접 물리층보다 뒤의 안전 실패 의심에 머문다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_WRITER
+    evidenceCode: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    role: DIRTY_FAKE
+    detailAppend: "마모 흔적은 수상하지만 백도윤을 후퇴시킨 프롬프터/인이어 지시의 원인을 설명하지 못한다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_LIGHTING_DP
+    evidenceCode: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    role: DIRTY_FAKE
+    detailAppend: "마모 흔적은 위험하지만, 이 판의 직접 물리층은 비규격 필터와 MAX-BLIND 과노출 세팅이다."
+    proofDimensions:
+      - FAKE_REFUTATION
+  - variantCode: VARIANT_STUNT
+    evidenceCode: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    role: FATAL_LAYER_KEY
+    detailAppend: "정상 사고 파손과 다른 마모 방향이 사건 전 내부 하중 지지부의 사전 손상을 보강한다."
+    proofDimensions:
+      - FATAL_LAYER
+variants:
+  - code: VARIANT_ACTOR
+    enabled: true
+    weight: 1
+    culpritCode: SUSPECT_ACTOR
+    culpritName: "서이라"
+    fatalLayerSummary: "MARK 9 테이프 위치 조작"
+    directCause: "백도윤은 안전한 MARK 9라고 믿고 섰지만 실제 위치는 난간 가까이 이동되어 있었다."
+    solution:
+      motiveSummary: "해외 계약을 앞둔 서이라를 백도윤이 과거 사적 자료와 계약 폭로로 통제하려 했다."
+      fakeRefutationSummary: "민루아의 무광 겔은 실제로 존재하지만, 새 MARK 9 테이프가 그 겔 자국 위에서 들떠 있어 이후 위치 조작이 있었다."
+      solutionText: |-
+        서이라는 백도윤이 자신을 계속 통제하려 하자 MARK 9 위치를 조작했다.
+        민루아의 겔은 실제로 위험했지만, 그 겔 위로 들뜬 MARK 9 테이프가 남아 있어 겔 이후의 조작이 있었음을 보여준다.
+        백도윤은 안전한 위치라고 믿고 섰지만, 실제 MARK 9는 난간 쪽으로 이동되어 있었다.
+        주연배우 대기실의 검은 마킹 테이프와 기존 접착 잔여선이 이 위치 조작을 뒷받침한다.
+        따라서 치명적 물리층은 미끄럼이 아니라 MARK 9 마킹 조작이다.
+      proofDimensions:
+        FATAL_LAYER:
+          primary:
+            - EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+            - EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+          secondary:
+            - EVIDENCE_MARK9_CURRENT_POSITION_PHOTO
+            - EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE
+            - EVIDENCE_CONTINUITY_SKETCH_NOTE
+        MOTIVE:
+          primary:
+            - EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE
+        FAKE_REFUTATION:
+          primary:
+            - EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE
+            - EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE
+          secondary:
+            - EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+            - EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER
+  - code: VARIANT_WRITER
+    enabled: true
+    weight: 1
+    culpritCode: SUSPECT_WRITER
+    culpritName: "윤채린"
+    fatalLayerSummary: "프롬프터 반사 문구 + 인이어 경고음 + Actor POV 체크를 이용한 반사적 후퇴 유도"
+    directCause: "백도윤은 Actor POV를 확인하던 중 공식 대본에 없는 지시와 청각적 공황 자극을 받고 뒤로 물러섰다."
+    solution:
+      motiveSummary: "백도윤이 윤채린 가족의 원고/크레딧을 훔쳤고, 마지막 회에서도 윤채린의 이름을 지우려 했다."
+      fakeRefutationSummary: "MARK 9와 무광 겔은 수상하지만, 이 판에서는 백도윤을 직접 뒤로 움직이게 만든 원인이 아니다."
+      solutionText: |-
+        윤채린은 백도윤이 자신의 원고와 이름을 빼앗았다고 믿고 있었다.
+        백도윤은 Actor POV를 확인하기 위해 배우 시야에서 프롬프터와 조명을 직접 확인하던 중이었다.
+        B-roll 스틸컷에는 공식 대본에 없는 후퇴 지시가 프롬프터 유리에 흐릿하게 반사되어 있다.
+        동시에 인이어/현장 음향 파편에는 백도윤이 반사적으로 움직일 수밖에 없는 청각 자극이 남아 있다.
+        따라서 치명적 물리층은 대본 그 자체가 아니라, 프롬프터와 인이어를 통한 시청각적 공황 유도다.
+      proofDimensions:
+        FATAL_LAYER:
+          primary:
+            - EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+            - EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST
+            - EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+          secondary:
+            - EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL
+            - EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH
+        MOTIVE:
+          primary:
+            - EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE
+        FAKE_REFUTATION:
+          primary:
+            - EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+            - EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE
+          secondary:
+            - EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+  - code: VARIANT_LIGHTING_DP
+    enabled: true
+    weight: 1
+    culpritCode: SUSPECT_LIGHTING_DP
+    culpritName: "류현규"
+    fatalLayerSummary: "비규격 확산 필터와 MAX-BLIND 세팅을 이용한 플래시성 과노출"
+    directCause: "Cue 9 백라이트가 정상 연출을 넘어 백도윤의 시야와 공간 인지를 무너뜨렸다."
+    solution:
+      motiveSummary: "백도윤은 과거 조명 사고 책임을 류현규에게 전가하려 했다."
+      fakeRefutationSummary: "MARK 9, 프롬프터, 안전 잠금부 모두 수상하지만 이 판에서 결정적 상태로 닫히지 않는다."
+      solutionText: |-
+        류현규는 백도윤에게 조명 사고 책임을 뒤집어쓸 위기에 있었다.
+        사건 당일 Cue 9에는 표준 필터 대신 겉보기에는 유사한 비규격 확산 필터가 끼워져 있었다.
+        MAX-BLIND 메모와 변형된 필터 클로즈업은 이 과노출이 우연한 장비 고장이 아니라 의도된 세팅이었음을 보여준다.
+        백도윤은 3.4초 동안 시야와 공간 인지를 잃었고, 그 틈에 균형을 무너뜨렸다.
+        따라서 치명적 물리층은 조명의 플래시성 과노출이다.
+      proofDimensions:
+        FATAL_LAYER:
+          primary:
+            - EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+            - EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+            - EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO
+          secondary:
+            - EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE
+            - EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT
+        MOTIVE:
+          primary:
+            - EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT
+        FAKE_REFUTATION:
+          primary:
+            - EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+            - EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+            - EVIDENCE_SAFETY_LATCH_CLOSEUP
+          secondary:
+            - EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE
+            - EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+  - code: VARIANT_STUNT
+    enabled: true
+    weight: 1
+    culpritCode: SUSPECT_STUNT_COORDINATOR
+    culpritName: "남기준"
+    fatalLayerSummary: "겉으로 정상 결착된 안전장비의 내부 하중 지지부 사전 손상"
+    directCause: "백도윤이 균형을 잃었을 때 안전장비가 잡아주어야 했지만, 내부 손상 때문에 버티지 못했다."
+    solution:
+      motiveSummary: "과거 촬영 사고 은폐 책임을 백도윤이 남기준에게 다시 전가하려 했다."
+      fakeRefutationSummary: "민루아의 겔, 조명 과노출, 프롬프터 지시는 위험 조건이지만 정상적인 안전장비라면 추락을 막았어야 한다."
+      solutionText: |-
+        남기준은 과거 촬영 사고 은폐의 책임을 다시 뒤집어쓸 위기에 놓여 있었다.
+        루프탑 드라이 런 안전 수칙상 백도윤은 짧은 앵글 확인 중에도 안전 결착을 해야 했다.
+        하네스 결착 사진은 겉보기에는 정상처럼 보이지만, 잠금부 클로즈업과 마모 흔적은 내부 지지부의 사전 손상을 가리킨다.
+        강태오의 불량 클립은 하단 보조 안전망 문제일 뿐, 백도윤의 주 안전장비가 실패한 이유를 설명하지 못한다.
+        따라서 치명적 물리층은 안전 잠금부의 사전 훼손이다.
+      proofDimensions:
+        FATAL_LAYER:
+          primary:
+            - EVIDENCE_SAFETY_LATCH_CLOSEUP
+            - EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+            - EVIDENCE_HARNESS_LOCK_CHECK_PHOTO
+          secondary:
+            - EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE
+            - EVIDENCE_SAFETY_CHECKLIST_OVERWRITE
+            - EVIDENCE_OLD_STUNT_ACCIDENT_FILE
+        MOTIVE:
+          primary:
+            - EVIDENCE_OLD_STUNT_ACCIDENT_FILE
+        FAKE_REFUTATION:
+          primary:
+            - EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+          secondary:
+            - EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE
+            - EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+            - EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+unlockRules:
+  - evidenceCode: EVIDENCE_ROOFTOP_SET_SCENE_PHOTO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 10
+  - evidenceCode: EVIDENCE_MARK9_CURRENT_POSITION_PHOTO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 20
+  - evidenceCode: EVIDENCE_STAGE_BLOCKING_OVERVIEW
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 30
+  - evidenceCode: EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 40
+  - evidenceCode: EVIDENCE_MASTER_TRIGGER_AUDIO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_SCENE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 50
+  - evidenceCode: EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_SCENE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 60
+  - evidenceCode: EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_SCENE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 70
+  - evidenceCode: EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 80
+  - evidenceCode: EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 90
+  - evidenceCode: EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 100
+  - evidenceCode: EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 110
+  - evidenceCode: EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 120
+  - evidenceCode: EVIDENCE_HARNESS_LOCK_CHECK_PHOTO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_PHYSICAL_TRACE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 130
+  - evidenceCode: EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 140
+  - evidenceCode: EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 150
+  - evidenceCode: EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 160
+  - evidenceCode: EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 170
+  - evidenceCode: EVIDENCE_SAFETY_LATCH_WEAR_PATTERN
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 180
+  - evidenceCode: EVIDENCE_SAFETY_CHECKLIST_OVERWRITE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 190
+  - evidenceCode: EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 200
+  - evidenceCode: EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 210
+  - evidenceCode: EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 220
+  - evidenceCode: EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 230
+  - evidenceCode: EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 240
+  - evidenceCode: EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 250
+  - evidenceCode: EVIDENCE_OLD_STUNT_ACCIDENT_FILE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 260
+  - evidenceCode: EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 270
+  - evidenceCode: EVIDENCE_EDITED_MAKING_REEL_EXPORT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_CONTRADICTION_AND_MOTIVE
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 280
+  - evidenceCode: EVIDENCE_CONTINUITY_SKETCH_NOTE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 290
+  - evidenceCode: EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 300
+  - evidenceCode: EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 310
+  - evidenceCode: EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 320
+  - evidenceCode: EVIDENCE_SAFETY_LATCH_CLOSEUP
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 330
+  - evidenceCode: EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_DECISIVE_PHYSICAL_PROOF
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 340
+  - evidenceCode: EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 350
+npcPolicies:
+  - characterCode: SUSPECT_ACTOR
+    publicAlibi: "리허설 전후 주연배우 대기실과 세트 대기 동선에 있었고, MARK 9 위치는 연기 동선 확인 차원이었다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "백도윤이 만든 톱스타이자 주연배우."
+      directKnowledge:
+        - "주연배우 대기실과 리허설 동선에 접근할 수 있었다."
+        - "MARK 9 위치와 배우 동선의 의미를 알고 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "공개 알리바이와 해금된 증거에 한해 방어적으로 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "방어적"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_WRITER
+    publicAlibi: "최종 대본과 프롬프터 문구를 확인했지만, 현장 지시는 공식 수정 범위였다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "작품의 메인 작가."
+      directKnowledge:
+        - "최종 블로킹 대본과 프롬프터 문구에 접근할 수 있었다."
+        - "Actor POV 확인 과정의 대본상 필요성을 설명할 수 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "작가 업무와 해금된 증거에 한해 차분하게 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "차분하지만 예민함"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_LIGHTING_DP
+    publicAlibi: "Cue 9 조명 세팅은 정상 촬영 준비였고, 필터와 노출은 기술팀 관행 안에서 처리했다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "조명감독이자 촬영감독."
+      directKnowledge:
+        - "Cue 9 조명 세팅과 확산 필터 운용을 알고 있다."
+        - "과노출 프레임과 현장 조명 조건을 기술적으로 설명할 수 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "기술 설명은 하되 해금되지 않은 정답 정보는 말하지 않는다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "전문적이고 방어적"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_STUNT_COORDINATOR
+    publicAlibi: "루프탑 세트 안전 점검과 하네스 결착 확인은 절차대로 했다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "루프탑 세트의 안전 책임자이자 액션감독."
+      directKnowledge:
+        - "하네스, 안전 잠금부, 드라이 런 안전 수칙을 알고 있다."
+        - "안전 점검표와 리깅 구역 접근 권한이 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "안전 절차와 해금된 증거에 한해 단정적으로 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "단호하고 방어적"
+    evidenceReactionPolicies: []
+  - characterCode: RED_HERRING_PRODUCER
+    publicAlibi: "제작비와 외주 장비 계약 문제는 있었지만, 리허설 동작 자체에는 관여하지 않았다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "제작비와 외주 장비 계약을 총괄하는 제작 책임자."
+      directKnowledge:
+        - "외주 장비 계약과 비승인 발주 흐름을 알고 있다."
+        - "예산과 보험 조정 관련 문서의 배경을 설명할 수 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "제작/장비 계약 범위와 해금된 증거에 한해 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "회피적"
+    evidenceReactionPolicies: []
+  - characterCode: RED_HERRING_SUPPORTING_ACTOR
+    publicAlibi: "조연배우 대기 동선 주변에 있었지만, MARK 9 위치 조작자는 아니라고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "백도윤이 새로 밀어주던 조연배우."
+      directKnowledge:
+        - "조연배우 대기실과 루프탑 주변 동선 일부에 접근할 수 있었다."
+        - "무광 겔 흔적과 관련된 질문에 제한적으로 반응할 수 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "자기 동선과 해금된 증거에 한해 불안하게 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "불안하고 방어적"
+    evidenceReactionPolicies: []
+  - characterCode: WITNESS_SCRIPT_SUPERVISOR
+    publicAlibi: "스크립터 기록과 B-roll 백업을 관리했지만, 현장 장치 조작에는 관여하지 않았다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "촬영 연속성, B-roll 동기화, 기록 백업 담당자."
+      directKnowledge:
+        - "B-roll 원본, 연속성 노트, 기록 백업의 존재를 알고 있다."
+        - "공식본과 원본 자료의 차이를 일부 알고 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "fatal layer answer"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "중립 참고인으로서 기록 관리 범위와 해금된 증거에 한해 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "조심스럽고 신중함"
+    evidenceReactionPolicies: []
+scoring:
+  totalScore: 100
+  passScore: 70
+  finalDeductionSubmission:
+    culpritCode: required
+    selectedEvidenceCodes:
+      recommendedCount: 4
+      fallbackCount: 3
+    fatalLayerExplanation: required
+    fakeRefutationExplanation: required
+    motiveExplanation: required
+  deductionFields:
+    - code: CULPRIT_SELECTION
+      label: "범인 선택"
+      points: 30
+    - code: FATAL_LAYER_PROOF
+      label: "치명 물리층 증명"
+      points: 30
+    - code: FAKE_REFUTATION_PROOF
+      label: "오답 유도 증거 기각"
+      points: 20
+    - code: MOTIVE_PROOF
+      label: "동기 증명"
+      points: 15
+    - code: REASONING_CONSISTENCY
+      label: "논리 일관성"
+      points: 5
+  fallbackIfEvidenceSlotIsThree:
+    selectedEvidenceCount: 3
+    required:
+      - fatalLayerEvidenceAtLeastOne
+      - motiveEvidenceAtLeastOne
+      - fakeRefutationEvidenceOrTextRequired
+  scoreCaps:
+    ifCulpritWrong:
+      maxScore: 45
+    ifCulpritWrongButFatalLayerCorrect:
+      maxScore: 55
+    ifCulpritCorrectButFatalLayerWrong:
+      maxScore: 70
+    ifCulpritCorrectAndFatalLayerCorrectButNoFakeRefutation:
+      maxScore: 80
+    ifPermanentRedHerringSelected:
+      maxScore: 40
+    ifNeutralWitnessSelected:
+      maxScore: 35
+  partialCredit:
+    ifCulpritWrong:
+      fakeRefutationProofMax: 12
+  rankPolicy:
+    S:
+      minScore: 90
+      required:
+        - culpritCorrect
+        - fatalLayerCorrect
+        - fakeRefutationAtLeastPartial
+        - motiveAtLeastPartial
+    A:
+      minScore: 80
+      required:
+        - culpritCorrect
+        - fatalLayerCorrect
+  wrongAnswerFeedback:
+    - selectedCharacterCode: RED_HERRING_SUPPORTING_ACTOR
+      maxScore: 40
+      feedbackText: |-
+        민루아는 무광 겔을 남긴 위험한 인물이 맞습니다.
+        하지만 겔은 백도윤의 최초 균형 붕괴 지점과 완전히 일치하지 않았고, 오히려 그 겔 위로 MARK 9 테이프 끝이 들뜬 흔적이 남아 있었습니다.
+        이는 민루아가 겔을 남긴 이후, 다른 누군가가 MARK 9 위치를 다시 조작했다는 뜻입니다.
+        그녀는 악의적인 방해자였지만, 백도윤을 그 위치에 세운 진범은 아닙니다.
+    - selectedCharacterCode: RED_HERRING_PRODUCER
+      maxScore: 40
+      feedbackText: |-
+        강태오가 저가형 안전 클립으로 하단 보조 안전망을 위험하게 만든 것은 사실입니다.
+        하지만 하단 안전망은 백도윤이 처음 균형을 잃는 순간을 만든 장치가 아닙니다.
+        이번 사건의 직접 치명층은 위치 표시, 프롬프터/인이어, 조명 세팅, 또는 백도윤이 몸에 결착한 주 안전장치 중 하나였습니다.
+        강태오는 범죄에 가까운 은폐와 횡령을 했지만, 백도윤의 마지막 움직임을 설계한 사람은 아닙니다.
+    - selectedCharacterCode: WITNESS_SCRIPT_SUPERVISOR
+      maxScore: 35
+      feedbackText: |-
+        고은별은 사건의 원본 자료를 숨긴 수상한 인물입니다.
+        하지만 그녀가 MARK 9 테이프, 프롬프터 지시, 조명 필터, 안전 잠금부 중 어느 하나를 직접 조작했다는 증거는 없습니다.
+        그녀가 숨긴 것은 범행 그 자체가 아니라, 범행을 해석할 수 있는 원본 자료였습니다.
+assets:
+  - assetKey: "official/studio9/v1/scenario/SCENARIO_STUDIO9.cover.png"
+    type: "SCENARIO_COVER"
+    targetKind: "SCENARIO"
+    targetCode: "SCENARIO_STUDIO9"
+    s3ObjectKey: "official/studio9/v1/scenario/SCENARIO_STUDIO9.cover.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/스튜디오9 커버.png"
+    sourceStatus: "READY"
+    altText: "스튜디오9 커버"
+  - assetKey: "official/studio9/v1/scenario/SCENARIO_STUDIO9.map.png"
+    type: "SCENARIO_MAP"
+    targetKind: "SCENARIO"
+    targetCode: "SCENARIO_STUDIO9"
+    s3ObjectKey: "official/studio9/v1/scenario/SCENARIO_STUDIO9.map.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/스튜디오9 전체 층면도.png"
+    sourceStatus: "READY"
+    altText: "스튜디오9 전체 층면도"
+  - assetKey: "official/studio9/v1/victims/VICTIM_BAEK_DOYOON.png"
+    type: "VICTIM_PORTRAIT"
+    targetKind: "VICTIM"
+    targetCode: "VICTIM_BAEK_DOYOON"
+    s3ObjectKey: "official/studio9/v1/victims/VICTIM_BAEK_DOYOON.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/피해자 백도윤.png"
+    sourceStatus: "READY"
+    altText: "피해자 백도윤"
+  - assetKey: "official/studio9/v1/characters/SUSPECT_ACTOR.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_ACTOR"
+    s3ObjectKey: "official/studio9/v1/characters/SUSPECT_ACTOR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/주연배우 서이라.png"
+    sourceStatus: "READY"
+    altText: "주연배우 서이라"
+  - assetKey: "official/studio9/v1/characters/SUSPECT_WRITER.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_WRITER"
+    s3ObjectKey: "official/studio9/v1/characters/SUSPECT_WRITER.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/메인 작가 윤채린.png"
+    sourceStatus: "READY"
+    altText: "메인 작가 윤채린"
+  - assetKey: "official/studio9/v1/characters/SUSPECT_LIGHTING_DP.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_LIGHTING_DP"
+    s3ObjectKey: "official/studio9/v1/characters/SUSPECT_LIGHTING_DP.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조명감독·촬영감독 류현규.png"
+    sourceStatus: "READY"
+    altText: "조명감독·촬영감독 류현규"
+  - assetKey: "official/studio9/v1/characters/SUSPECT_STUNT_COORDINATOR.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_STUNT_COORDINATOR"
+    s3ObjectKey: "official/studio9/v1/characters/SUSPECT_STUNT_COORDINATOR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/액션감독 남기준.png"
+    sourceStatus: "READY"
+    altText: "액션감독 남기준"
+  - assetKey: "official/studio9/v1/characters/RED_HERRING_PRODUCER.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "RED_HERRING_PRODUCER"
+    s3ObjectKey: "official/studio9/v1/characters/RED_HERRING_PRODUCER.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/제작총괄 강태오.png"
+    sourceStatus: "READY"
+    altText: "제작총괄 강태오"
+  - assetKey: "official/studio9/v1/characters/RED_HERRING_SUPPORTING_ACTOR.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "RED_HERRING_SUPPORTING_ACTOR"
+    s3ObjectKey: "official/studio9/v1/characters/RED_HERRING_SUPPORTING_ACTOR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조연배우 민루아.png"
+    sourceStatus: "READY"
+    altText: "조연배우 민루아"
+  - assetKey: "official/studio9/v1/characters/WITNESS_SCRIPT_SUPERVISOR.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "WITNESS_SCRIPT_SUPERVISOR"
+    s3ObjectKey: "official/studio9/v1/characters/WITNESS_SCRIPT_SUPERVISOR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/스크립터 고은별.png"
+    sourceStatus: "READY"
+    altText: "스크립터 고은별"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_ROOFTOP_SET_SCENE_PHOTO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_ROOFTOP_SET_SCENE_PHOTO"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_ROOFTOP_SET_SCENE_PHOTO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/루프탑 세트 현장 사진.png"
+    sourceStatus: "READY"
+    altText: "루프탑 세트 현장 사진"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_CURRENT_POSITION_PHOTO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MARK9_CURRENT_POSITION_PHOTO"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_CURRENT_POSITION_PHOTO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/사건 당시 MARK 9 위치 사진.png"
+    sourceStatus: "READY"
+    altText: "사건 당시 MARK 9 위치 사진"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_DIRECTOR_ACTOR_POV_CHECKLIST.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/백도윤의 Actor POV 체크리스트.png"
+    sourceStatus: "READY"
+    altText: "백도윤의 Actor POV 체크리스트"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MASTER_TRIGGER_AUDIO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MASTER_TRIGGER_AUDIO"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MASTER_TRIGGER_AUDIO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/“Roll. Cue 9.” 인터컴 음성  음성 트리거 계열 증거.png"
+    sourceStatus: "READY"
+    altText: "“Roll. Cue 9.” 인터컴 음성  음성 트리거 계열 증거"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_OVEREXPOSED_FRAME_SEQUENCE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/과노출 3.4초 프레임 시퀀스.png"
+    sourceStatus: "READY"
+    altText: "과노출 3.4초 프레임 시퀀스"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SOUND_MIXER_AMBIENT_AUDIO_FRAGMENT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/현장 앰비언트 오디오 파편.png"
+    sourceStatus: "READY"
+    altText: "현장 앰비언트 오디오 파편"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_OLD_ADHESIVE_RESIDUE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/기존 MARK 9 접착 잔여선.png"
+    sourceStatus: "READY"
+    altText: "기존 MARK 9 접착 잔여선"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MATTE_GEL_SMEAR_ON_TAPE_LINE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/검은 마스킹 라인의 무광 겔 자국.png"
+    sourceStatus: "READY"
+    altText: "검은 마스킹 라인의 무광 겔 자국"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_SHOE_GEL_TRACE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조연배우 신발 밑창 겔 흔적.png"
+    sourceStatus: "READY"
+    altText: "조연배우 신발 밑창 겔 흔적"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_CHEAP_SAFETY_CLIP_FRAGMENT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/저가형 안전 클립 파편.png"
+    sourceStatus: "READY"
+    altText: "저가형 안전 클립 파편"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_UNAPPROVED_EQUIPMENT_ORDER.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/비승인 장비 교체 발주서.png"
+    sourceStatus: "READY"
+    altText: "비승인 장비 교체 발주서"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_HARNESS_LOCK_CHECK_PHOTO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_HARNESS_LOCK_CHECK_PHOTO"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_HARNESS_LOCK_CHECK_PHOTO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/하네스 결착 확인 사진.png"
+    sourceStatus: "READY"
+    altText: "하네스 결착 확인 사진"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_BROLL_STILL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/프롬프터 반사 B-roll 스틸컷.png"
+    sourceStatus: "READY"
+    altText: "프롬프터 반사 B-roll 스틸컷"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_FINAL_BLOCKING_SCRIPT_MISMATCH.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/최종 블로킹 대본 불일치.png"
+    sourceStatus: "READY"
+    altText: "최종 블로킹 대본 불일치"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MAX_BLIND_HANDWRITTEN_LIGHTING_MEMO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/MAX-BLIND 손글씨 조명 메모.png"
+    sourceStatus: "READY"
+    altText: "MAX-BLIND 손글씨 조명 메모"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_NONSTANDARD_DIFFUSION_FILTER_FRAME.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/비규격 확산 필터 프레임.png"
+    sourceStatus: "READY"
+    altText: "비규격 확산 필터 프레임"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_WEAR_PATTERN.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SAFETY_LATCH_WEAR_PATTERN"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_WEAR_PATTERN.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/안전 잠금부 비정상 마모 흔적.png"
+    sourceStatus: "READY"
+    altText: "안전 잠금부 비정상 마모 흔적"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_CHECKLIST_OVERWRITE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SAFETY_CHECKLIST_OVERWRITE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_CHECKLIST_OVERWRITE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/안전 점검표 덮어쓰기 흔적.png"
+    sourceStatus: "READY"
+    altText: "안전 점검표 덮어쓰기 흔적"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_ACTOR_DRESSING_ROOM_BLACK_TAPE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/주연배우 대기실 검은 마킹 테이프 조각.png"
+    sourceStatus: "READY"
+    altText: "주연배우 대기실 검은 마킹 테이프 조각"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SUPPORTING_ACTOR_CASTING_DEAL_MESSAGE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조연배우 차기작 거래 메시지.png"
+    sourceStatus: "READY"
+    altText: "조연배우 차기작 거래 메시지"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_INSURANCE_BUDGET_ADJUSTMENT_MAIL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/보험·예산 조정 메일.png"
+    sourceStatus: "READY"
+    altText: "보험·예산 조정 메일"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_ACTOR_CONTRACT_BLACKMAIL_MESSAGE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/주연배우 해외 계약 협박 메시지.png"
+    sourceStatus: "READY"
+    altText: "주연배우 해외 계약 협박 메시지"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_OLD_MANUSCRIPT_CREDIT_FILE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/오래된 원고와 크레딧 파일.png"
+    sourceStatus: "READY"
+    altText: "오래된 원고와 크레딧 파일"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_LIGHTING_ACCIDENT_BLAME_DRAFT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조명 사고 책임 보고서 초안.png"
+    sourceStatus: "READY"
+    altText: "조명 사고 책임 보고서 초안"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_OLD_STUNT_ACCIDENT_FILE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_OLD_STUNT_ACCIDENT_FILE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_OLD_STUNT_ACCIDENT_FILE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/과거 촬영 사고 은폐 파일.png"
+    sourceStatus: "READY"
+    altText: "과거 촬영 사고 은폐 파일"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SCRIPT_SUPERVISOR_BACKUP_DRIVE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/스크립터 백업 드라이브.png"
+    sourceStatus: "READY"
+    altText: "스크립터 백업 드라이브"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_EDITED_MAKING_REEL_EXPORT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_EDITED_MAKING_REEL_EXPORT"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_EDITED_MAKING_REEL_EXPORT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/편집된 메이킹 릴 추출본.png"
+    sourceStatus: "READY"
+    altText: "편집된 메이킹 릴 추출본"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_CONTINUITY_SKETCH_NOTE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CONTINUITY_SKETCH_NOTE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_CONTINUITY_SKETCH_NOTE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/연속성 스케치 노트.png"
+    sourceStatus: "READY"
+    altText: "연속성 스케치 노트"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_PROMPTER_REFLECTION_ENHANCED_STILL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/확대된 프롬프터 반사 스틸.png"
+    sourceStatus: "READY"
+    altText: "확대된 프롬프터 반사 스틸"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_WARPED_DIFFUSION_FILTER_CLOSEUP.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/변형된 확산 필터 클로즈업.png"
+    sourceStatus: "READY"
+    altText: "변형된 확산 필터 클로즈업"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_CLOSEUP.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SAFETY_LATCH_CLOSEUP"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_SAFETY_LATCH_CLOSEUP.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/안전 잠금부 클로즈업.png"
+    sourceStatus: "READY"
+    altText: "안전 잠금부 클로즈업"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_STAGE_FLOOR_DUST_SCUFF_PATTERN.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/무대 바닥 먼지와 마찰 패턴.png"
+    sourceStatus: "READY"
+    altText: "무대 바닥 먼지와 마찰 패턴"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_ROOFTOP_DRY_RUN_SAFETY_RULE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/루프탑 드라이 런 안전 수칙.png"
+    sourceStatus: "READY"
+    altText: "루프탑 드라이 런 안전 수칙"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_MARK9_TAPE_LIFTED_EDGE_GEL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/들뜬 테이프.png"
+    sourceStatus: "READY"
+    altText: "들뜬 테이프"
+  - assetKey: "official/studio9/v1/evidence/EVIDENCE_STAGE_BLOCKING_OVERVIEW.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_STAGE_BLOCKING_OVERVIEW"
+    s3ObjectKey: "official/studio9/v1/evidence/EVIDENCE_STAGE_BLOCKING_OVERVIEW.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/증거3루프탑 블로킹 배치도.png"
+    sourceStatus: "READY"
+    altText: "증거3루프탑 블로킹 배치도"

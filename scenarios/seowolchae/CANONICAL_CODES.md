@@ -1,0 +1,163 @@
+# Seowolchae Canonical Code Freeze
+
+Status: frozen for YAML draft v1.
+Source of truth: `SEOWOLCHAE_IMPLEMENTATION_CANON_v1.1.md`.
+
+Working Brief codes are historical unless they appear in this file or in the alias list below. YAML, DB, Android, S3, AI policy, and scoring should use only canonical codes from this file.
+
+## Scenario
+
+```yaml
+scenarioCode: SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION
+title: "서월채의 마지막 처방"
+version: v1
+culpritMode: RANDOM_REQUIRED
+assetKeyPattern: "official/seowolchae/v1/{category}/{canonicalCode}.png"
+```
+
+## Victim
+
+```yaml
+victimCode: VICTIM_CHA_MINHYUK
+deathLocationCode: LOC_DIRECTOR_SUITE
+```
+
+## Variants
+
+| variantCode | culpritCode | MVP active option |
+|---|---|---:|
+| `VARIANT_SECURITY` | `SUSPECT_SECURITY` | false |
+| `VARIANT_SECRETARY` | `SUSPECT_SECRETARY` | true |
+| `VARIANT_SPOUSE` | `SUSPECT_SPOUSE` | false |
+| `VARIANT_DOCTOR` | `SUSPECT_DOCTOR` | false |
+
+For MVP fallback, the server may pin `VARIANT_SECRETARY`, but the YAML and DB structure must preserve all four variants.
+
+## Characters
+
+| characterCode | name | type | culpritEligible |
+|---|---|---|---:|
+| `SUSPECT_SPOUSE` | 윤서하 | SUSPECT | true |
+| `SUSPECT_SECRETARY` | 한지오 | SUSPECT | true |
+| `SUSPECT_DOCTOR` | 서태준 | SUSPECT | true |
+| `SUSPECT_SECURITY` | 오민석 | SUSPECT | true |
+| `WITNESS_CARE_MANAGER` | 문하연 | WITNESS | false |
+
+## Locations
+
+| locationCode | displayName | floor |
+|---|---|---|
+| `LOC_ENTRANCE_HALL` | 현관홀 | 1F |
+| `LOC_MEETING_ROOM` | 회의실 | 1F |
+| `LOC_DINING_ROOM` | 만찬장 | 1F |
+| `LOC_KITCHEN_PREP` | 주방 / 보조 준비실 | 1F |
+| `LOC_SECURITY_ROOM` | 보안실 | 1F |
+| `LOC_WINE_CELLAR` | 지하 와인셀러 | B1 |
+| `LOC_DIRECTOR_SUITE` | 이사장 침실 | 2F |
+| `LOC_MEDICAL_ROOM` | 간이진료실 / 약품 보관실 | 2F |
+| `LOC_CARE_STATION` | 케어 스테이션 | 2F |
+| `LOC_SECOND_FLOOR_CORRIDOR` | 2층 중앙 복도 | 2F |
+| `LOC_GUEST_ROOM_SPOUSE` | 배우자 게스트룸 | 2F |
+
+## Evidence
+
+| evidenceCode | title | phase | category | locationCode |
+|---|---|---|---|---|
+| `EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO` | 이사장 침실 현장 사진 | PHASE_0_OPENING | SCENE | `LOC_DIRECTOR_SUITE` |
+| `EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA` | 비공식 조정 회의 안건 | PHASE_0_OPENING | DOCUMENT | `LOC_MEETING_ROOM` |
+| `EVIDENCE_DINING_SEATING_CHART` | 만찬 좌석 배치표 | PHASE_1_BASIC_OBJECTS | DOCUMENT | `LOC_DINING_ROOM` |
+| `EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP` | 2층 CCTV 사각지대 평면도 | PHASE_0_OPENING | MAP | `LOC_SECOND_FLOOR_CORRIDOR` |
+| `EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP` | 침실 협탁의 물병과 컵 | PHASE_1_BASIC_OBJECTS | PHYSICAL | `LOC_DIRECTOR_SUITE` |
+| `EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE` | 이사장 개인 야간 약통 | PHASE_1_BASIC_OBJECTS | PHYSICAL | `LOC_DIRECTOR_SUITE` |
+| `EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS` | 이사장 전용 디캔터와 와인잔 | PHASE_1_BASIC_OBJECTS | PHYSICAL | `LOC_DINING_ROOM` |
+| `EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG` | 침실 복약 알림/스누즈 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_CARE_STATION` |
+| `EVIDENCE_CARE_CALL_PANEL_LOG` | VIP 케어 호출 패널 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_CARE_STATION` |
+| `EVIDENCE_MEDICAL_CABINET_ACCESS_LOG` | 약품 보관함 개봉 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_MEDICAL_ROOM` |
+| `EVIDENCE_WINE_CELLAR_ACCESS_LOG` | 와인셀러 관리자 권한 카드 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_WINE_CELLAR` |
+| `EVIDENCE_SECURITY_SERVER_RESYNC_LOG` | 보안 서버 재동기화 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_SECURITY_ROOM` |
+| `EVIDENCE_CARE_STATION_ACCESS_LOG` | 케어 스테이션 접근 로그 | PHASE_2_SYSTEM_LOGS | DIGITAL_LOG | `LOC_CARE_STATION` |
+| `EVIDENCE_SECOND_FLOOR_CCTV_STILL` | 2층 복도 부분 CCTV 스틸컷 | PHASE_3_MOTIVE_AND_CONTRADICTION | DIGITAL_LOG | `LOC_SECOND_FLOOR_CORRIDOR` |
+| `EVIDENCE_CROSS_WITNESS_STATEMENT_CARD` | 상호 목격 진술 카드 | PHASE_3_MOTIVE_AND_CONTRADICTION | TESTIMONY | `LOC_SECOND_FLOOR_CORRIDOR` |
+| `EVIDENCE_DIVORCE_PROPERTY_DRAFT` | 이혼·재산분할 합의서 초안 | PHASE_3_MOTIVE_AND_CONTRADICTION | DOCUMENT | `LOC_MEETING_ROOM` |
+| `EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE` | 비밀 장부 내부 감사 통보 | PHASE_3_MOTIVE_AND_CONTRADICTION | DOCUMENT | `LOC_MEETING_ROOM` |
+| `EVIDENCE_VIP_PATIENT_INCIDENT_FILE` | 과거 VIP 환자 사고 파일 | PHASE_3_MOTIVE_AND_CONTRADICTION | DOCUMENT | `LOC_MEDICAL_ROOM` |
+| `EVIDENCE_SECURITY_SCAPEGOAT_DRAFT` | 특수보안팀장 책임전가 지시서 | PHASE_3_MOTIVE_AND_CONTRADICTION | DOCUMENT | `LOC_SECURITY_ROOM` |
+| `EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT` | 케어매니저 제보 초안 | PHASE_3_MOTIVE_AND_CONTRADICTION | DOCUMENT | `LOC_CARE_STATION` |
+| `EVIDENCE_WEARABLE_VITAL_RAW_LOG` | 웨어러블 바이탈 원시 데이터 | PHASE_4_KILLING_BLOW | DIGITAL_LOG | `LOC_CARE_STATION` |
+| `EVIDENCE_NIGHT_PILL_PACKAGE_TEAR` | 배우자 게스트룸의 찢어진 약포장 | PHASE_4_KILLING_BLOW | PHYSICAL | `LOC_GUEST_ROOM_SPOUSE` |
+| `EVIDENCE_WATER_SERVICE_CHECKLIST` | 침실 물병 서비스 체크리스트 | PHASE_4_KILLING_BLOW | DOCUMENT | `LOC_KITCHEN_PREP` |
+| `EVIDENCE_DECANTER_SEAL_FRAGMENT` | 와인셀러 선반의 디캔터 실링 조각 | PHASE_4_KILLING_BLOW | PHYSICAL | `LOC_WINE_CELLAR` |
+| `EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO` | 수정된 야간 처방 메모 | PHASE_4_KILLING_BLOW | DOCUMENT | `LOC_MEDICAL_ROOM` |
+
+## Variant State Evidence
+
+Only these evidence codes may receive activeVariant-specific visible detail modifiers in v1:
+
+```text
+EVIDENCE_WEARABLE_VITAL_RAW_LOG
+EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+EVIDENCE_WATER_SERVICE_CHECKLIST
+EVIDENCE_DECANTER_SEAL_FRAGMENT
+EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+```
+
+All other evidence keeps the same title, image, and base detail across variants.
+
+## Enums
+
+```yaml
+EvidenceCategory:
+  - SCENE
+  - DOCUMENT
+  - PHYSICAL
+  - DIGITAL_LOG
+  - MAP
+  - TESTIMONY
+
+UnlockPhase:
+  - PHASE_0_OPENING
+  - PHASE_1_BASIC_OBJECTS
+  - PHASE_2_SYSTEM_LOGS
+  - PHASE_3_MOTIVE_AND_CONTRADICTION
+  - PHASE_4_KILLING_BLOW
+
+EvidenceRole:
+  - KEY
+  - SUPPORT_KEY
+  - SUPPORT
+  - COMMON
+  - DIRTY_FAKE
+  - EXCLUSION
+  - ACCESS_KEY
+  - METHOD_KEY
+  - TIME_KEY
+  - COVERUP_KEY
+  - MOTIVE_KEY
+  - UNLOCK_KEY
+```
+
+## Alias Policy
+
+Old aliases are accepted only as migration/input aliases. YAML output must use the canonical code on the left.
+
+| canonicalCode | oldAliases |
+|---|---|
+| `EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA` | `EVIDENCE_PRIVATE_MEETING_AGENDA` |
+| `EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP` | `EVIDENCE_CCTV_BLIND_SPOT_MAP` |
+| `EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP` | `EVIDENCE_WATER_BOTTLE_CUP`, `EVIDENCE_BEDSIDE_WATER_BOTTLE` |
+| `EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE` | `EVIDENCE_NIGHT_PILL_CASE`, `EVIDENCE_DIRECTOR_NIGHT_MEDICINE_CASE` |
+| `EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS` | `EVIDENCE_DECANTER_WINE_GLASS` |
+| `EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG` | `EVIDENCE_NIGHT_MEDICATION_REMINDER` |
+| `EVIDENCE_CARE_CALL_PANEL_LOG` | `EVIDENCE_VIP_CARE_CALL_PANEL_LOG` |
+| `EVIDENCE_WINE_CELLAR_ACCESS_LOG` | `EVIDENCE_WINE_CELLAR_CARDKEY_LOG` |
+| `EVIDENCE_CROSS_WITNESS_STATEMENT_CARD` | `EVIDENCE_CROSS_WITNESS_CARD` |
+| `EVIDENCE_DIVORCE_PROPERTY_DRAFT` | `EVIDENCE_DIVORCE_ASSET_DRAFT` |
+| `EVIDENCE_VIP_PATIENT_INCIDENT_FILE` | `EVIDENCE_VIP_PATIENT_ACCIDENT_FILE` |
+| `EVIDENCE_WEARABLE_VITAL_RAW_LOG` | `EVIDENCE_WEARABLE_VITAL_LOG` |
+| `EVIDENCE_NIGHT_PILL_PACKAGE_TEAR` | `EVIDENCE_TORN_PILL_PACKAGING` |
+
+Working Brief contains additional historical `EVIDENCE_*` names. Do not import them unless a later alias map explicitly maps them to a canonical code above.
+
+## Next Step
+
+Step 3 should design the shared YAML schema using these frozen codes.

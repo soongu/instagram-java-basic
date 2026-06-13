@@ -1,0 +1,1422 @@
+metadata:
+  schemaVersion: 1
+  contentStatus: DRAFT
+  locale: ko-KR
+  sourceCanonRef: SEOWOLCHAE_IMPLEMENTATION_CANON_v1.1.md
+  workingBriefRef: CLUEROOM_SCENARIO_WORKING_BRIEF_v20.md
+  canonicalCodeRef: CANONICAL_CODES.md
+  assetMapRef: asset-map.csv
+  assetKeyPattern: official/seowolchae/v1/{category}/{canonicalCode}.png
+  draftScope: BASE_CONTENT_WITH_ASSETS_VARIANTS_UNLOCK_NPC_SCORING_DRAFT
+
+scenario:
+  code: SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION
+  version: "1.0.0"
+  title: "서월채의 마지막 처방"
+  description: "서광의료재단 VIP 별장동에서 벌어진 독살 미스터리"
+  synopsis: "차민혁 이사장이 비공식 조정 회의와 만찬 이후 2층 침실에서 쓰러진다."
+  genre: "폐쇄 저택 독살 미스터리"
+  difficulty: NORMAL
+  estimatedPlayTimeMinutes: 30
+  scenarioType: OFFICIAL
+  visibility: PUBLIC
+  status: DRAFT
+  culpritMode: RANDOM_REQUIRED
+  deductionMode: VARIANT_PROOF
+  mapMode: REFERENCE_ONLY
+  evidenceMode: PHASE_BASED_EVIDENCE_TAB
+  coverAssetKey: official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.cover.png
+  mapAssetKey: official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.map.png
+
+victim:
+  code: VICTIM_CHA_MINHYUK
+  name: "차민혁"
+  roleLabel: "서광의료재단 이사장"
+  publicProfile: "공익 의료사업과 기부로 알려진 의료재단 권력자"
+  deathLocationCode: LOC_DIRECTOR_SUITE
+  discoveredAtText: "회의와 만찬 이후 2층 이사장 침실에서 의식 저하 상태로 발견됨"
+  publicCauseOfDeathText: "심장질환 또는 약물 부작용처럼 보이는 급성 쇼크"
+  portraitAssetKey: official/seowolchae/v1/victims/VICTIM_CHA_MINHYUK.png
+
+locations:
+  - code: LOC_ENTRANCE_HALL
+    name: "현관홀"
+    floor: "1F"
+    description: "인물들이 서월채에 들어오고 이동한 공통 동선 배경."
+    imageAssetKey: official/seowolchae/v1/locations/LOC_ENTRANCE_HALL.png
+    sortOrder: 10
+  - code: LOC_MEETING_ROOM
+    name: "회의실"
+    floor: "1F"
+    description: "비공식 조정 회의가 열린 장소. 회의 안건과 동기 문서의 출처."
+    imageAssetKey: null
+    sortOrder: 20
+  - code: LOC_DINING_ROOM
+    name: "만찬장"
+    floor: "1F"
+    description: "회의 이후 만찬이 진행된 장소. 좌석표와 디캔터/와인잔의 출처."
+    imageAssetKey: official/seowolchae/v1/locations/LOC_DINING_ROOM.png
+    sortOrder: 30
+  - code: LOC_KITCHEN_PREP
+    name: "주방 / 보조 준비실"
+    floor: "1F"
+    description: "침실 물병 서비스 체크리스트와 준비 동선이 연결되는 장소."
+    imageAssetKey: null
+    sortOrder: 40
+  - code: LOC_SECURITY_ROOM
+    name: "보안실"
+    floor: "1F"
+    description: "보안 서버 로그와 책임전가 문서가 남아 있는 장소."
+    imageAssetKey: official/seowolchae/v1/locations/LOC_SECURITY_ROOM.png
+    sortOrder: 50
+  - code: LOC_WINE_CELLAR
+    name: "지하 와인셀러"
+    floor: "B1"
+    description: "와인셀러 출입 로그와 디캔터 실링 조각이 연결되는 지하 공간."
+    imageAssetKey: official/seowolchae/v1/locations/LOC_WINE_CELLAR.png
+    sortOrder: 60
+  - code: LOC_DIRECTOR_SUITE
+    name: "이사장 침실"
+    floor: "2F"
+    description: "차민혁이 발견된 주 사건 현장. 물병과 컵, 야간 약통, 호출 패널이 연결된다."
+    imageAssetKey: null
+    sortOrder: 70
+  - code: LOC_MEDICAL_ROOM
+    name: "간이진료실 / 약품 보관실"
+    floor: "2F"
+    description: "약품 보관함 로그, 처방 메모, 과거 VIP 환자 사고 파일이 연결되는 장소."
+    imageAssetKey: null
+    sortOrder: 80
+  - code: LOC_CARE_STATION
+    name: "케어 스테이션"
+    floor: "2F"
+    description: "케어 로그, 바이탈 로그, 케어매니저 제보 초안이 연결되는 장소."
+    imageAssetKey: null
+    sortOrder: 90
+  - code: LOC_SECOND_FLOOR_CORRIDOR
+    name: "2층 중앙 복도"
+    floor: "2F"
+    description: "CCTV 사각지대, 부분 CCTV 스틸컷, 상호 목격 진술이 연결되는 복도."
+    imageAssetKey: null
+    sortOrder: 100
+  - code: LOC_GUEST_ROOM_SPOUSE
+    name: "배우자 게스트룸"
+    floor: "2F"
+    description: "배우자 윤서하가 머문 방. 찢어진 약포장이 발견되는 장소."
+    imageAssetKey: null
+    sortOrder: 110
+
+characters:
+  - code: SUSPECT_SPOUSE
+    name: "윤서하"
+    roleLabel: "배우자"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "재단 홍보이사이자 차민혁의 배우자. 재단 이미지와 대외 관계를 관리한다."
+    publicAlibi: ""
+    personalityTone: "차분하지만 방어적"
+    portraitAssetKey: official/seowolchae/v1/characters/SUSPECT_SPOUSE.png
+    sortOrder: 10
+  - code: SUSPECT_SECRETARY
+    name: "한지오"
+    roleLabel: "비서실장"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "이사장실 실무 책임자. 회의 자료와 차민혁의 일정을 관리한다."
+    publicAlibi: ""
+    personalityTone: "정중하지만 계산적"
+    portraitAssetKey: official/seowolchae/v1/characters/SUSPECT_SECRETARY.png
+    sortOrder: 20
+  - code: SUSPECT_DOCTOR
+    name: "서태준"
+    roleLabel: "예비병원장"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "차민혁의 주치의이자 차기 병원장 후보. 처방과 의료 기록에 접근할 수 있다."
+    publicAlibi: ""
+    personalityTone: "전문적이고 통제적"
+    portraitAssetKey: official/seowolchae/v1/characters/SUSPECT_DOCTOR.png
+    sortOrder: 30
+  - code: SUSPECT_SECURITY
+    name: "오민석"
+    roleLabel: "특수보안팀장"
+    characterType: CULPRIT_ELIGIBLE
+    culpritEligible: true
+    publicProfile: "서월채 출입과 보안 시스템을 관리하는 특수보안팀장."
+    publicAlibi: ""
+    personalityTone: "무뚝뚝하고 경계심이 강함"
+    portraitAssetKey: official/seowolchae/v1/characters/SUSPECT_SECURITY.png
+    sortOrder: 40
+  - code: WITNESS_CARE_MANAGER
+    name: "문하연"
+    roleLabel: "케어매니저"
+    characterType: NEUTRAL_WITNESS
+    culpritEligible: false
+    publicProfile: "야간 건강 체크와 VIP 케어 기록을 담당하는 케어매니저."
+    publicAlibi: ""
+    personalityTone: "조심스럽고 망설임이 많음"
+    portraitAssetKey: official/seowolchae/v1/characters/WITNESS_CARE_MANAGER.png
+    sortOrder: 50
+
+evidences:
+  - code: EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO
+    title: "이사장 침실 현장 사진"
+    category: SCENE
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_DIRECTOR_SUITE
+    oneLine: "이사장 침실 현장 사진"
+    baseDetail: "이사장 침실을 촬영한 현장 사진. 침대, 협탁, 주변 동선과 발견 당시의 정리 상태를 함께 확인할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO.png
+    sortOrder: 10
+  - code: EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA
+    title: "비공식 조정 회의 안건"
+    category: DOCUMENT
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_MEETING_ROOM
+    oneLine: "비공식 조정 회의 안건"
+    baseDetail: "차민혁이 비공식 조정 회의에서 내부 감사 대응과 책임 정리를 다루려 했음을 보여주는 안건 문서."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA.png
+    sortOrder: 20
+  - code: EVIDENCE_DINING_SEATING_CHART
+    title: "만찬 좌석 배치표"
+    category: DOCUMENT
+    unlockPhase: PHASE_1_BASIC_OBJECTS
+    locationCode: LOC_DINING_ROOM
+    oneLine: "만찬 좌석 배치표"
+    baseDetail: "만찬 참석자들의 좌석 배치표. 누가 피해자와 가까운 위치에 있었는지, 만찬 중 이동 동선을 비교할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_DINING_SEATING_CHART.png
+    sortOrder: 30
+  - code: EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP
+    title: "2층 CCTV 사각지대 평면도"
+    category: MAP
+    unlockPhase: PHASE_0_OPENING
+    locationCode: LOC_SECOND_FLOOR_CORRIDOR
+    oneLine: "2층 CCTV 사각지대 평면도"
+    baseDetail: "2층 복도 CCTV가 비추는 구간과 비추지 못하는 구간을 표시한 평면도. 침실, 진료실, 케어 스테이션 사이의 사각지대를 확인할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP.png
+    sortOrder: 40
+  - code: EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+    title: "침실 협탁의 물병과 컵"
+    category: PHYSICAL
+    unlockPhase: PHASE_1_BASIC_OBJECTS
+    locationCode: LOC_DIRECTOR_SUITE
+    oneLine: "침실 협탁의 물병과 컵"
+    baseDetail: "침실 협탁 위에 놓여 있던 물병과 컵. 평범한 야간 준비물처럼 보이지만 피해자의 침실 루틴과 연결된다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP.png
+    sortOrder: 50
+  - code: EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+    title: "이사장 개인 야간 약통"
+    category: PHYSICAL
+    unlockPhase: PHASE_1_BASIC_OBJECTS
+    locationCode: LOC_DIRECTOR_SUITE
+    oneLine: "이사장 개인 야간 약통"
+    baseDetail: "이사장 침실에 보관된 개인 야간 약통. 피해자가 평소 어떤 방식으로 복약 루틴을 관리했는지 확인하게 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE.png
+    sortOrder: 60
+  - code: EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS
+    title: "이사장 전용 디캔터와 와인잔"
+    category: PHYSICAL
+    unlockPhase: PHASE_1_BASIC_OBJECTS
+    locationCode: LOC_DINING_ROOM
+    oneLine: "이사장 전용 디캔터와 와인잔"
+    baseDetail: "만찬장에 남은 이사장 전용 디캔터와 와인잔. 와인 제공 경로와 만찬 중 접촉 가능성을 따져볼 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS.png
+    sortOrder: 70
+  - code: EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG
+    title: "침실 복약 알림/스누즈 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_CARE_STATION
+    oneLine: "침실 복약 알림/스누즈 로그"
+    baseDetail: "침실 복약 알림이 울리고 스누즈 처리된 기록. 알림 발생과 실제 복용 완료가 같은 의미는 아니라는 점이 중요하다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG.png
+    sortOrder: 80
+  - code: EVIDENCE_CARE_CALL_PANEL_LOG
+    title: "VIP 케어 호출 패널 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_CARE_STATION
+    oneLine: "VIP 케어 호출 패널 로그"
+    baseDetail: "VIP 케어 호출 패널이 작동한 시각과 호출 흐름을 보여주는 로그. 피해자가 발견되기 직전의 대응 시간을 확인할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_CARE_CALL_PANEL_LOG.png
+    sortOrder: 90
+  - code: EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+    title: "약품 보관함 개봉 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_MEDICAL_ROOM
+    oneLine: "약품 보관함 개봉 로그"
+    baseDetail: "간이진료실 약품 보관함이 열린 기록. 누가 언제 의료 물품과 처방 관련 자료에 접근했는지 추적할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_MEDICAL_CABINET_ACCESS_LOG.png
+    sortOrder: 100
+  - code: EVIDENCE_WINE_CELLAR_ACCESS_LOG
+    title: "와인셀러 관리자 권한 카드 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_WINE_CELLAR
+    oneLine: "와인셀러 관리자 권한 카드 로그"
+    baseDetail: "관리자 권한 카드로 와인셀러에 접근한 기록. 지하 와인셀러와 만찬장 사이의 물품 이동 가능성을 확인하게 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_WINE_CELLAR_ACCESS_LOG.png
+    sortOrder: 110
+  - code: EVIDENCE_SECURITY_SERVER_RESYNC_LOG
+    title: "보안 서버 재동기화 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_SECURITY_ROOM
+    oneLine: "보안 서버 재동기화 로그"
+    baseDetail: "보안 서버가 재동기화된 기록. 단순 점검인지, 특정 시간대 동선 기록을 흐리기 위한 조치인지 따져봐야 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SERVER_RESYNC_LOG.png
+    sortOrder: 120
+  - code: EVIDENCE_CARE_STATION_ACCESS_LOG
+    title: "케어 스테이션 접근 로그"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_2_SYSTEM_LOGS
+    locationCode: LOC_CARE_STATION
+    oneLine: "케어 스테이션 접근 로그"
+    baseDetail: "케어 스테이션의 접근 기록. 야간 건강 체크 자료와 바이탈 로그가 보관된 위치에 누가 접근했는지 보여준다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_CARE_STATION_ACCESS_LOG.png
+    sortOrder: 130
+  - code: EVIDENCE_SECOND_FLOOR_CCTV_STILL
+    title: "2층 복도 부분 CCTV 스틸컷"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_SECOND_FLOOR_CORRIDOR
+    oneLine: "2층 복도 부분 CCTV 스틸컷"
+    baseDetail: "2층 복도 CCTV에서 일부만 남은 스틸컷. 사각지대와 겹쳐 해석해야 하며, 단독으로는 전체 동선을 확정하지 못한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_STILL.png
+    sortOrder: 140
+  - code: EVIDENCE_CROSS_WITNESS_STATEMENT_CARD
+    title: "상호 목격 진술 카드"
+    category: TESTIMONY
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_SECOND_FLOOR_CORRIDOR
+    oneLine: "상호 목격 진술 카드"
+    baseDetail: "여러 인물의 목격 진술을 비교한 카드. 서로의 진술이 겹치거나 어긋나는 지점을 찾기 위한 자료다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_CROSS_WITNESS_STATEMENT_CARD.png
+    sortOrder: 150
+  - code: EVIDENCE_DIVORCE_PROPERTY_DRAFT
+    title: "이혼·재산분할 합의서 초안"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_MEETING_ROOM
+    oneLine: "이혼·재산분할 합의서 초안"
+    baseDetail: "이혼과 재산분할 조건이 정리된 합의서 초안. 배우자와 피해자 사이의 이해관계를 보여준다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_DIVORCE_PROPERTY_DRAFT.png
+    sortOrder: 160
+  - code: EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE
+    title: "비밀 장부 내부 감사 통보"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_MEETING_ROOM
+    oneLine: "비밀 장부 내부 감사 통보"
+    baseDetail: "비밀 장부와 내부 감사 관련 통보 문서. 재단 내부 책임 문제가 누구에게 향하고 있었는지 보여준다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE.png
+    sortOrder: 170
+  - code: EVIDENCE_VIP_PATIENT_INCIDENT_FILE
+    title: "과거 VIP 환자 사고 파일"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_MEDICAL_ROOM
+    oneLine: "과거 VIP 환자 사고 파일"
+    baseDetail: "과거 VIP 환자 사고와 관련된 파일. 의료 기록과 책임 소재를 둘러싼 오래된 문제가 드러난다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_VIP_PATIENT_INCIDENT_FILE.png
+    sortOrder: 180
+  - code: EVIDENCE_SECURITY_SCAPEGOAT_DRAFT
+    title: "특수보안팀장 책임전가 지시서"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_SECURITY_ROOM
+    oneLine: "특수보안팀장 책임전가 지시서"
+    baseDetail: "특수보안팀장에게 책임을 전가하는 내용의 지시서. 보안 기록 관리 책임과 해임 가능성을 확인하게 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SCAPEGOAT_DRAFT.png
+    sortOrder: 190
+  - code: EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT
+    title: "케어매니저 제보 초안"
+    category: DOCUMENT
+    unlockPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+    locationCode: LOC_CARE_STATION
+    oneLine: "케어매니저 제보 초안"
+    baseDetail: "케어매니저가 작성하던 제보 초안. 재단 내부 기록과 야간 건강 체크 자료가 외부로 나갈 수 있었음을 암시한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT.png
+    sortOrder: 200
+  - code: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    title: "웨어러블 바이탈 원시 데이터"
+    category: DIGITAL_LOG
+    unlockPhase: PHASE_4_KILLING_BLOW
+    locationCode: LOC_CARE_STATION
+    oneLine: "웨어러블 바이탈 원시 데이터"
+    baseDetail: "웨어러블 장치의 바이탈 원시 데이터. 범인을 직접 알려주는 정답표가 아니라, 치명 반응의 시간대를 좁히는 필터다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_WEARABLE_VITAL_RAW_LOG.png
+    sortOrder: 210
+  - code: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    title: "배우자 게스트룸의 찢어진 약포장"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_KILLING_BLOW
+    locationCode: LOC_GUEST_ROOM_SPOUSE
+    oneLine: "배우자 게스트룸의 찢어진 약포장"
+    baseDetail: "배우자 게스트룸에서 발견된 찢어진 약포장. 약 관련 의심을 만들지만, 다른 시간 자료와 함께 해석해야 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_NIGHT_PILL_PACKAGE_TEAR.png
+    sortOrder: 220
+  - code: EVIDENCE_WATER_SERVICE_CHECKLIST
+    title: "침실 물병 서비스 체크리스트"
+    category: DOCUMENT
+    unlockPhase: PHASE_4_KILLING_BLOW
+    locationCode: LOC_KITCHEN_PREP
+    oneLine: "침실 물병 서비스 체크리스트"
+    baseDetail: "침실 물병 서비스 체크리스트. 야간 준비 업무와 물병 교체 또는 정리 시점을 비교할 수 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_WATER_SERVICE_CHECKLIST.png
+    sortOrder: 230
+  - code: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    title: "와인셀러 선반의 디캔터 실링 조각"
+    category: PHYSICAL
+    unlockPhase: PHASE_4_KILLING_BLOW
+    locationCode: LOC_WINE_CELLAR
+    oneLine: "와인셀러 선반의 디캔터 실링 조각"
+    baseDetail: "와인셀러 선반에서 발견된 작은 디캔터 실링 조각. 이사장 전용 디캔터가 만찬 전후 어떻게 다뤄졌는지 확인하게 한다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_DECANTER_SEAL_FRAGMENT.png
+    sortOrder: 240
+  - code: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    title: "수정된 야간 처방 메모"
+    category: DOCUMENT
+    unlockPhase: PHASE_4_KILLING_BLOW
+    locationCode: LOC_MEDICAL_ROOM
+    oneLine: "수정된 야간 처방 메모"
+    baseDetail: "간이진료실 데스크에서 발견된 야간 케어 지시서. 마지막 줄에는 다른 잉크 농도와 필압으로 덧쓴 수정 흔적이 남아 있다."
+    imageAssetKey: official/seowolchae/v1/evidence/EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO.png
+    sortOrder: 250
+
+evidenceVariantStates:
+  - variantCode: VARIANT_SECURITY
+    evidenceCode: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    role: TIME_KEY
+    detailAppend: "20:58경 만찬 후반부터 미세 이상 반응이 먼저 나타나며, 침실 물병/약통/처방 메모보다 앞선 시간 필터로 작동한다."
+    proofDimensions:
+      - TIME_PROOF
+  - variantCode: VARIANT_SECRETARY
+    evidenceCode: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    role: TIME_KEY
+    detailAppend: "21:18 호흡수와 체온 이상이 침실 물병 섭취 추정 구간과 가장 밀접하게 맞물린다."
+    proofDimensions:
+      - TIME_PROOF
+  - variantCode: VARIANT_SPOUSE
+    evidenceCode: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    role: TIME_KEY
+    detailAppend: "21:29 급성 악화가 스누즈 이후 지연 복약 구간과 맞물리며, 약통 루트의 시간축을 보강한다."
+    proofDimensions:
+      - TIME_PROOF
+  - variantCode: VARIANT_DOCTOR
+    evidenceCode: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    role: TIME_KEY
+    detailAppend: "21:29 급성 악화가 수정된 야간 처방/케어 지시가 실제 루틴에 영향을 준 시점과 맞물린다."
+    proofDimensions:
+      - TIME_PROOF
+  - variantCode: VARIANT_SECURITY
+    evidenceCode: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    role: DIRTY_FAKE
+    detailAppend: "찢어진 약포장은 수상하지만 20:58 초기 이상 반응과 직접 맞지 않아 와인셀러 경로를 대체하지 못한다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECRETARY
+    evidenceCode: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    role: DIRTY_FAKE
+    detailAppend: "약 관련 의심은 남지만 물병 서비스 기록과 21:18 바이탈 변화의 결합보다 약하다."
+    proofDimensions: []
+  - variantCode: VARIANT_SPOUSE
+    evidenceCode: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    role: METHOD_KEY
+    detailAppend: "찢어진 약포장과 21:25 전후 지연 복약이 맞물리며 배우자의 약통 조작 가능성을 직접 보강한다."
+    proofDimensions:
+      - METHOD_PROOF
+  - variantCode: VARIANT_DOCTOR
+    evidenceCode: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    role: DIRTY_FAKE
+    detailAppend: "약포장 흔적은 수상하지만 이 판의 결정적 층은 직접 약통 접촉보다 처방/케어 지시 조작이다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECURITY
+    evidenceCode: EVIDENCE_WATER_SERVICE_CHECKLIST
+    role: DIRTY_FAKE
+    detailAppend: "체크리스트 수정 흔적은 있으나 20:58 초기 이상 반응과 직접 맞지 않는다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECRETARY
+    evidenceCode: EVIDENCE_WATER_SERVICE_CHECKLIST
+    role: METHOD_KEY
+    detailAppend: "21:07 이후 침실 물병 교체 확인란이 다른 필압으로 덧씌워져 있다."
+    proofDimensions:
+      - METHOD_PROOF
+      - ACCESS_PROOF
+  - variantCode: VARIANT_SPOUSE
+    evidenceCode: EVIDENCE_WATER_SERVICE_CHECKLIST
+    role: DIRTY_FAKE
+    detailAppend: "체크리스트에 수정 흔적은 있으나 바이탈 로그의 급강하 시점과 직접 맞지 않는다."
+    proofDimensions: []
+  - variantCode: VARIANT_DOCTOR
+    evidenceCode: EVIDENCE_WATER_SERVICE_CHECKLIST
+    role: DIRTY_FAKE
+    detailAppend: "물병 서비스 기록은 수상하지만 수정된 처방 메모와 21:13 약품 보관함 개봉보다 결정력이 낮다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECURITY
+    evidenceCode: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    role: METHOD_KEY
+    detailAppend: "디캔터 실링 조각이 20:48 와인셀러 접근 시간과 맞물려 이사장 전용 디캔터 조작을 가리킨다."
+    proofDimensions:
+      - METHOD_PROOF
+  - variantCode: VARIANT_SECRETARY
+    evidenceCode: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "디캔터 흔적은 수상하지만 물병 섭취 구간과 21:18 바이탈 변화의 결합을 대체하지 못한다."
+    proofDimensions: []
+  - variantCode: VARIANT_SPOUSE
+    evidenceCode: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "와인 관련 흔적은 남아 있지만 최종 급강하는 지연 복약 이후의 약통 루트와 더 가깝다."
+    proofDimensions: []
+  - variantCode: VARIANT_DOCTOR
+    evidenceCode: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    role: DIRTY_FAKE
+    detailAppend: "디캔터 조각은 은폐성 페이크로 남지만, 처방 지시 계층 조작과 21:29 급성 악화를 설명하지 못한다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECURITY
+    evidenceCode: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    role: DIRTY_FAKE
+    detailAppend: "처방 메모 수정은 수상하지만 20:58 초기 이상 반응과 와인셀러 접근보다 늦은 의료 지시층 의심에 머문다."
+    proofDimensions: []
+  - variantCode: VARIANT_SECRETARY
+    evidenceCode: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    role: DIRTY_FAKE
+    detailAppend: "수정 흔적은 있지만 침실 물병 서비스 기록과 물 섭취 추정 구간을 넘어서는 결정타가 되지 않는다."
+    proofDimensions: []
+  - variantCode: VARIANT_SPOUSE
+    evidenceCode: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    role: DIRTY_FAKE
+    detailAppend: "처방 메모는 의심스럽지만 배우자의 2층 접근, 약포장, 지연 복약 흐름과 직접 조작 주체가 다르다."
+    proofDimensions: []
+  - variantCode: VARIANT_DOCTOR
+    evidenceCode: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    role: METHOD_KEY
+    detailAppend: "21:13 약품 보관함 개봉과 처방 메모 수정이 맞물리며 야간 케어 지시 계층 조작을 가리킨다."
+    proofDimensions:
+      - METHOD_PROOF
+variants:
+  - code: VARIANT_SECURITY
+    enabled: true
+    mvpActiveOption: false
+    weight: 1
+    culpritCode: SUSPECT_SECURITY
+    culpritName: "오민석"
+    culpritRole: "서월채 특수보안팀장"
+    mainMethodLayer: "와인셀러 / 이사장 전용 디캔터 / 와인잔"
+    coreTimeWindow:
+      access: "20:48 관리자 권한 카드로 와인셀러 접근"
+      earlySignal: "20:58 바이탈 1차 이상 반응"
+      coverUp: "21:24 보안 서버 재동기화"
+    solution:
+      motiveSummary: "차민혁이 비공식 녹취/영상 관리 책임을 오민석의 독단적 일탈로 넘기려 했고, 오민석은 형사 책임과 경력 파탄을 피하려 했다."
+      coverUpSummary: "보안 서버 재동기화를 시스템 점검처럼 위장해 1층/B1 동선 메타데이터를 흐린다."
+      solutionText: |-
+        차민혁의 첫 이상 반응은 만찬 후반인 20:58경 이미 바이탈 원시 데이터에 나타났다.
+        이 시간대는 침실 물병, 야간 약통, 처방 메모 조작보다 앞선다.
+        와인셀러 관리자 권한 출입 기록과 디캔터 실링 조각은 이사장 전용 디캔터가 먼저 조작되었음을 보여준다.
+        21:24 보안 서버 재동기화는 살인 자체보다 자신의 1층/B1 동선을 흐리기 위한 은폐 행동이었다.
+        따라서 이 Variant에서 진범은 특수보안팀장 오민석이다.
+      proofDimensions:
+        TIME_PROOF:
+          primary:
+            - EVIDENCE_WEARABLE_VITAL_RAW_LOG
+        METHOD_PROOF:
+          primary:
+            - EVIDENCE_DECANTER_SEAL_FRAGMENT
+          secondary:
+            - EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS
+        ACCESS_PROOF:
+          primary:
+            - EVIDENCE_WINE_CELLAR_ACCESS_LOG
+        COVERUP_PROOF:
+          primary:
+            - EVIDENCE_SECURITY_SERVER_RESYNC_LOG
+        MOTIVE_PROOF:
+          primary:
+            - EVIDENCE_SECURITY_SCAPEGOAT_DRAFT
+      misleadingEvidenceCodes:
+        - EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+        - EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+        - EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+        - EVIDENCE_DIVORCE_PROPERTY_DRAFT
+  - code: VARIANT_SECRETARY
+    enabled: true
+    mvpActiveOption: true
+    weight: 1
+    culpritCode: SUSPECT_SECRETARY
+    culpritName: "한지오"
+    culpritRole: "비서실장 / 이사장실 실무 책임자"
+    mainMethodLayer: "침실 물병 / 컵 / 서비스 체크리스트"
+    coreTimeWindow:
+      manipulation: "21:07 침실 물병/컵 확인 및 서비스 기록 조작"
+      reminder: "21:15 복약 알림"
+      ingestionLikely: "21:17~21:19 물 섭취"
+      reaction: "21:18 호흡수/체온 이상 시작"
+    solution:
+      motiveSummary: "차민혁이 비자금 흐름과 비밀 장부 책임을 한지오 개인 책임으로 몰아 내부 감사의 희생양으로 삼으려 했다."
+      coverUpSummary: "침실 물병 정리를 업무상 루틴으로 위장하고, 체크리스트 시간을 사후 정리 기록처럼 보이게 한다."
+      solutionText: |-
+        차민혁은 21:15 복약 알림 직후 물을 마신 것으로 추정된다.
+        21:18의 바이탈 변화는 만찬 후반의 미세 이상보다 침실 물병 경로와 더 밀접하다.
+        침실 물병의 닦인 흔적과 서비스 체크리스트의 수정 흔적은 비서실장의 21:07 행동과 연결된다.
+        비밀 장부 내부 감사 통보는 한지오가 차민혁에게 책임을 뒤집어쓸 위기에 있었다는 동기를 보강한다.
+        따라서 이 Variant에서 진범은 비서실장 한지오다.
+      proofDimensions:
+        TIME_PROOF:
+          primary:
+            - EVIDENCE_WEARABLE_VITAL_RAW_LOG
+          secondary:
+            - EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG
+        METHOD_PROOF:
+          primary:
+            - EVIDENCE_WATER_SERVICE_CHECKLIST
+          secondary:
+            - EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+        ACCESS_PROOF:
+          primaryCombination:
+            - EVIDENCE_CARE_CALL_PANEL_LOG
+            - EVIDENCE_SECOND_FLOOR_CCTV_STILL
+          partial:
+            - EVIDENCE_CARE_CALL_PANEL_LOG
+            - EVIDENCE_SECOND_FLOOR_CCTV_STILL
+        MOTIVE_PROOF:
+          primary:
+            - EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE
+      misleadingEvidenceCodes:
+        - EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+        - EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+        - EVIDENCE_DIVORCE_PROPERTY_DRAFT
+        - EVIDENCE_SECURITY_SERVER_RESYNC_LOG
+  - code: VARIANT_SPOUSE
+    enabled: true
+    mvpActiveOption: false
+    weight: 1
+    culpritCode: SUSPECT_SPOUSE
+    culpritName: "윤서하"
+    culpritRole: "배우자 / 재단 홍보이사"
+    mainMethodLayer: "개인 야간 약통 / 복약 알림 스누즈 / 찢어진 약포장"
+    coreTimeWindow:
+      reminder: "21:15 복약 알림"
+      hiddenAccess: "21:17~21:23 배우자 2층 접근"
+      delayedMedication: "21:25 전후 지연 복약"
+      reaction: "21:29 급성 악화"
+    solution:
+      motiveSummary: "차민혁이 쇼윈도 부부 유지와 갤러리 운영권을 약속했지만, 뒤로는 윤서하의 갤러리 관련 비리 자료를 외부 제출용으로 정리하고 있었다."
+      coverUpSummary: "침실 접근을 갤러리 USB를 찾기 위한 행동으로 축소하고, 약포장 흔적을 게스트룸 안에 숨긴다."
+      solutionText: |-
+        21:15 알림은 실제 복용 완료 시각이 아니라 복약 알림 발생 시각이었다.
+        스누즈 기록은 차민혁이 약을 뒤늦게 복용했음을 보여준다.
+        배우자의 21:17~21:23 2층 접근과 찢어진 약포장 흔적은 이 지연 복약 구간과 맞물린다.
+        이혼·재산분할 문서는 윤서하가 차민혁에게 속고 있었다는 동기를 보여준다.
+        따라서 이 Variant에서 진범은 배우자 윤서하다.
+      proofDimensions:
+        TIME_PROOF:
+          primary:
+            - EVIDENCE_WEARABLE_VITAL_RAW_LOG
+          secondary:
+            - EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG
+        METHOD_PROOF:
+          primary:
+            - EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+          secondary:
+            - EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+        ACCESS_PROOF:
+          primary:
+            - EVIDENCE_SECOND_FLOOR_CCTV_STILL
+          secondary:
+            - EVIDENCE_CROSS_WITNESS_STATEMENT_CARD
+        MOTIVE_PROOF:
+          primary:
+            - EVIDENCE_DIVORCE_PROPERTY_DRAFT
+      misleadingEvidenceCodes:
+        - EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+        - EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+        - EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE
+        - EVIDENCE_WINE_CELLAR_ACCESS_LOG
+  - code: VARIANT_DOCTOR
+    enabled: true
+    mvpActiveOption: false
+    weight: 1
+    culpritCode: SUSPECT_DOCTOR
+    culpritName: "서태준"
+    culpritRole: "예비병원장 / 주치의"
+    mainMethodLayer: "수정된 야간 처방 메모 / 케어 지시 계층 / 약품 보관함"
+    coreTimeWindow:
+      access: "21:13 약품 보관함 개봉"
+      instructionLayer: "야간 처방 메모 수정"
+      reaction: "21:29 급성 악화"
+    solution:
+      motiveSummary: "차민혁이 과거 VIP 의료사고 책임을 서태준에게 넘기고, 의사 경력과 병원장 승계를 무너뜨릴 외부 제출용 문서를 준비했다."
+      coverUpSummary: "약품 보관함 개봉을 의학적 확인 루틴으로 설명하고, 처방 메모 수정은 과거 기록 정리였다고 축소한다."
+      solutionText: |-
+        서태준의 범행은 특정 약품 설명이 아니라 케어 지시 계층을 바꾼 방식으로 이해해야 한다.
+        21:13 약품 보관함 개봉과 수정된 야간 처방 메모는 피해자의 야간 복약 루틴에 개입한 흔적이다.
+        21:29 급성 악화는 이 수정된 지시가 실제 상황에 영향을 준 시점과 맞물린다.
+        과거 VIP 환자 사고 파일은 서태준이 차민혁에게 버려질 위기에 있었다는 동기를 보여준다.
+        따라서 이 Variant에서 진범은 예비병원장 서태준이다.
+      proofDimensions:
+        TIME_PROOF:
+          primary:
+            - EVIDENCE_WEARABLE_VITAL_RAW_LOG
+        METHOD_PROOF:
+          primary:
+            - EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+          secondary:
+            - EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+        MOTIVE_PROOF:
+          primary:
+            - EVIDENCE_VIP_PATIENT_INCIDENT_FILE
+        SUPPORT_PROOF:
+          secondary:
+            - EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG
+            - EVIDENCE_CARE_CALL_PANEL_LOG
+      misleadingEvidenceCodes:
+        - EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+        - EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+        - EVIDENCE_DECANTER_SEAL_FRAGMENT
+        - EVIDENCE_DIVORCE_PROPERTY_DRAFT
+unlockRules:
+  - evidenceCode: EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 10
+  - evidenceCode: EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 20
+  - evidenceCode: EVIDENCE_DINING_SEATING_CHART
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_OBJECTS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 30
+  - evidenceCode: EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_0_OPENING
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 40
+  - evidenceCode: EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_OBJECTS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 50
+  - evidenceCode: EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_OBJECTS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 60
+  - evidenceCode: EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_1_BASIC_OBJECTS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 70
+  - evidenceCode: EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 80
+  - evidenceCode: EVIDENCE_CARE_CALL_PANEL_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 90
+  - evidenceCode: EVIDENCE_MEDICAL_CABINET_ACCESS_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 100
+  - evidenceCode: EVIDENCE_WINE_CELLAR_ACCESS_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 110
+  - evidenceCode: EVIDENCE_SECURITY_SERVER_RESYNC_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 120
+  - evidenceCode: EVIDENCE_CARE_STATION_ACCESS_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_2_SYSTEM_LOGS
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 130
+  - evidenceCode: EVIDENCE_SECOND_FLOOR_CCTV_STILL
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 140
+  - evidenceCode: EVIDENCE_CROSS_WITNESS_STATEMENT_CARD
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 150
+  - evidenceCode: EVIDENCE_DIVORCE_PROPERTY_DRAFT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 160
+  - evidenceCode: EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 170
+  - evidenceCode: EVIDENCE_VIP_PATIENT_INCIDENT_FILE
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 180
+  - evidenceCode: EVIDENCE_SECURITY_SCAPEGOAT_DRAFT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 190
+  - evidenceCode: EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_3_MOTIVE_AND_CONTRADICTION
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 200
+  - evidenceCode: EVIDENCE_WEARABLE_VITAL_RAW_LOG
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_KILLING_BLOW
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 210
+  - evidenceCode: EVIDENCE_NIGHT_PILL_PACKAGE_TEAR
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_KILLING_BLOW
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 220
+  - evidenceCode: EVIDENCE_WATER_SERVICE_CHECKLIST
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_KILLING_BLOW
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 230
+  - evidenceCode: EVIDENCE_DECANTER_SEAL_FRAGMENT
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_KILLING_BLOW
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 240
+  - evidenceCode: EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO
+    unlockType: PHASE
+    condition:
+      requiredPhase: PHASE_4_KILLING_BLOW
+      requiredEvidenceCodes: []
+      requiredCharacterCode: null
+      requiredInterrogationTopic: null
+      hintFallbackAllowed: true
+    sortOrder: 250
+npcPolicies:
+  - characterCode: SUSPECT_SPOUSE
+    publicAlibi: "사건 전후 2층 게스트룸과 가족 동선 주변에 있었고, 개인 물건을 찾았다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "재단 홍보이사이자 피해자의 배우자."
+      directKnowledge:
+        - "피해자와 가족/재단 이미지 문제로 갈등이 있었다."
+        - "2층 게스트룸 주변에 머문 시간이 있었다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "공개 알리바이와 해금된 증거에 한해 방어적으로 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "차분하지만 방어적"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_SECRETARY
+    publicAlibi: "회의 자료 정리와 야간 준비 확인 업무를 처리했으며, 침실 준비는 업무 루틴이었다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "이사장실 실무 책임자이자 일정/자료 관리 담당자."
+      directKnowledge:
+        - "회의 자료와 침실 야간 준비 업무에 접근할 수 있었다."
+        - "비서실 업무상 여러 장소의 체크리스트를 확인했다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "공개 업무 범위와 해금된 증거에 한해 정중하게 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "정중하지만 계산적"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_DOCTOR
+    publicAlibi: "피해자의 건강 상태와 야간 케어 루틴을 확인했을 뿐, 의료적 확인 업무였다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "피해자의 주치의이자 차기 병원장 후보."
+      directKnowledge:
+        - "피해자의 건강 상태와 의료 기록 일부를 알고 있다."
+        - "약품 보관실과 처방 관련 문서에 접근할 수 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "전문가처럼 통제된 어조로 답하되, 해금되지 않은 의료/정답 정보는 말하지 않는다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "전문적이고 통제적"
+    evidenceReactionPolicies: []
+  - characterCode: SUSPECT_SECURITY
+    publicAlibi: "서월채 보안 점검과 출입 로그 확인을 했고, 시스템 재동기화는 점검 절차였다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "서월채 출입과 보안 시스템을 관리하는 특수보안팀장."
+      directKnowledge:
+        - "보안실, 출입 기록, 시스템 점검 절차를 알고 있다."
+        - "서월채의 CCTV 사각지대와 출입 통제 구조를 알고 있다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "보안 절차와 공개 동선에 한해 짧게 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "무뚝뚝하고 경계심이 강함"
+    evidenceReactionPolicies: []
+  - characterCode: WITNESS_CARE_MANAGER
+    publicAlibi: "케어 스테이션에서 야간 건강 체크와 케어 기록을 확인했다고 주장한다."
+    promptSafeKnowledge:
+      selfRole: "야간 건강 체크와 VIP 케어 기록 담당자."
+      directKnowledge:
+        - "케어 스테이션의 일부 기록과 바이탈 이상 징후를 알고 있다."
+        - "VIP 케어 기록을 확인하거나 보존할 수 있는 위치에 있었다."
+      inferredKnowledge: []
+      forbiddenKnowledge:
+        - "activeVariant"
+        - "culpritCode"
+        - "solutionText"
+        - "variant truth table"
+        - "다른 용의자의 backend-only secret"
+    stagePolicies:
+      - stage: DEFAULT
+        policyText: "중립 참고인으로서 직접 확인한 기록과 해금된 증거에 한해 조심스럽게 답한다. 답변은 최대 2문장이다."
+        allowedFacts:
+          - "publicProfile"
+          - "publicAlibi"
+          - "unlockedEvidenceOnly"
+        forbiddenFacts:
+          - "backend-only solution"
+          - "unreleased suspect secret"
+        tone: "조심스럽고 망설임이 많음"
+    evidenceReactionPolicies: []
+scoring:
+  totalScore: 100
+  passScore: 70
+  evidenceSlots:
+    recommendedCount: 3
+  deductionFields:
+    - code: CULPRIT_SELECTION
+      label: "범인 선택"
+      points: 30
+    - code: EVIDENCE_PROOF_COVERAGE
+      label: "증거 Proof Dimension 커버리지"
+      points: 20
+    - code: METHOD_EXPLANATION
+      label: "범행 방법 설명"
+      points: 20
+    - code: MOTIVE_EXPLANATION
+      label: "동기 설명"
+      points: 15
+    - code: COVERUP_OR_ALIBI_EXPLANATION
+      label: "은폐 또는 알리바이 설명"
+      points: 10
+    - code: REASONING_CONSISTENCY
+      label: "논리 일관성"
+      points: 5
+  proofDimensionPolicy:
+    scoringMode: PROOF_DIMENSION_COVERAGE
+    dimensions:
+      - TIME_PROOF
+      - METHOD_PROOF
+      - ACCESS_PROOF
+      - MOTIVE_PROOF
+      - COVERUP_PROOF
+      - SUPPORT_PROOF
+    primaryEvidenceRule: "해당 proof dimension을 직접 증명하는 핵심 증거로 높은 점수를 부여한다."
+    secondaryEvidenceRule: "primary evidence와 함께 선택될 때 dimension을 보강하며, 단독으로는 dimension 만점 처리하지 않는다."
+    partialEvidenceRule: "방향은 맞지만 정보가 부족한 증거는 부분 점수만 부여한다."
+  scoreCapByMaxUnlockedPhase:
+    PHASE_0_OPENING: 45
+    PHASE_1_BASIC_OBJECTS: 60
+    PHASE_2_SYSTEM_LOGS: 75
+    PHASE_3_MOTIVE_AND_CONTRADICTION: 85
+    PHASE_4_KILLING_BLOW: 100
+  noVitalLogSubmission:
+    allowed: true
+    maxScoreCap: 85
+  wrongAnswerFeedback:
+    - selectedCharacterCode: WITNESS_CARE_MANAGER
+      maxScore: 35
+      feedbackText: |-
+        문하연은 바이탈 로그를 숨기고 제보를 망설인 수상한 인물이 맞습니다.
+        하지만 그녀가 치명 경로가 된 물병, 약통, 디캔터, 처방 메모 중 어느 하나를 직접 조작했다는 증거는 없습니다.
+        그녀가 숨긴 것은 범행이 아니라, 재단 비리를 제보하기 위해 보존해 둔 객관 기록과 그 제출 시점이었습니다.
+        진범은 문하연이 숨긴 로그가 가리키는 시간표 안에서, 실제 치명 물건에 접근한 인물입니다.
+assets:
+  - assetKey: "official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.cover.png"
+    type: "SCENARIO_COVER"
+    targetKind: "SCENARIO"
+    targetCode: "SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION"
+    s3ObjectKey: "official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.cover.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/1. 서월채 대문.png"
+    sourceStatus: "READY"
+    altText: "1. 서월채 대문"
+  - assetKey: "official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.map.png"
+    type: "SCENARIO_MAP"
+    targetKind: "SCENARIO"
+    targetCode: "SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION"
+    s3ObjectKey: "official/seowolchae/v1/scenario/SCENARIO_SEOWOLCHAE_LAST_PRESCRIPTION.map.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/서월채 전체맵.png"
+    sourceStatus: "READY"
+    altText: "서월채 전체맵"
+  - assetKey: "official/seowolchae/v1/victims/VICTIM_CHA_MINHYUK.png"
+    type: "VICTIM_PORTRAIT"
+    targetKind: "VICTIM"
+    targetCode: "VICTIM_CHA_MINHYUK"
+    s3ObjectKey: "official/seowolchae/v1/victims/VICTIM_CHA_MINHYUK.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/3. 피해자.png"
+    sourceStatus: "READY"
+    altText: "3. 피해자"
+  - assetKey: "official/seowolchae/v1/characters/SUSPECT_SPOUSE.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_SPOUSE"
+    s3ObjectKey: "official/seowolchae/v1/characters/SUSPECT_SPOUSE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/배우자.png"
+    sourceStatus: "READY"
+    altText: "배우자"
+  - assetKey: "official/seowolchae/v1/characters/SUSPECT_SECRETARY.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_SECRETARY"
+    s3ObjectKey: "official/seowolchae/v1/characters/SUSPECT_SECRETARY.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/비서.png"
+    sourceStatus: "READY"
+    altText: "비서"
+  - assetKey: "official/seowolchae/v1/characters/SUSPECT_DOCTOR.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_DOCTOR"
+    s3ObjectKey: "official/seowolchae/v1/characters/SUSPECT_DOCTOR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/예비병원장.png"
+    sourceStatus: "READY"
+    altText: "예비병원장"
+  - assetKey: "official/seowolchae/v1/characters/SUSPECT_SECURITY.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "SUSPECT_SECURITY"
+    s3ObjectKey: "official/seowolchae/v1/characters/SUSPECT_SECURITY.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/보안팀장.png"
+    sourceStatus: "READY"
+    altText: "보안팀장"
+  - assetKey: "official/seowolchae/v1/characters/WITNESS_CARE_MANAGER.png"
+    type: "CHARACTER_PORTRAIT"
+    targetKind: "CHARACTER"
+    targetCode: "WITNESS_CARE_MANAGER"
+    s3ObjectKey: "official/seowolchae/v1/characters/WITNESS_CARE_MANAGER.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/케어매니저.png"
+    sourceStatus: "READY"
+    altText: "케어매니저"
+  - assetKey: "official/seowolchae/v1/locations/LOC_ENTRANCE_HALL.png"
+    type: "LOCATION_IMAGE"
+    targetKind: "LOCATION"
+    targetCode: "LOC_ENTRANCE_HALL"
+    s3ObjectKey: "official/seowolchae/v1/locations/LOC_ENTRANCE_HALL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/별장 로비.png"
+    sourceStatus: "READY"
+    altText: "별장 로비"
+  - assetKey: "official/seowolchae/v1/locations/LOC_DINING_ROOM.png"
+    type: "LOCATION_IMAGE"
+    targetKind: "LOCATION"
+    targetCode: "LOC_DINING_ROOM"
+    s3ObjectKey: "official/seowolchae/v1/locations/LOC_DINING_ROOM.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/다이닝룸.png"
+    sourceStatus: "READY"
+    altText: "다이닝룸"
+  - assetKey: "official/seowolchae/v1/locations/LOC_SECURITY_ROOM.png"
+    type: "LOCATION_IMAGE"
+    targetKind: "LOCATION"
+    targetCode: "LOC_SECURITY_ROOM"
+    s3ObjectKey: "official/seowolchae/v1/locations/LOC_SECURITY_ROOM.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/보안 감시실.png"
+    sourceStatus: "READY"
+    altText: "보안 감시실"
+  - assetKey: "official/seowolchae/v1/locations/LOC_WINE_CELLAR.png"
+    type: "LOCATION_IMAGE"
+    targetKind: "LOCATION"
+    targetCode: "LOC_WINE_CELLAR"
+    s3ObjectKey: "official/seowolchae/v1/locations/LOC_WINE_CELLAR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/와인 저장고.png"
+    sourceStatus: "READY"
+    altText: "와인 저장고"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_SUITE_SCENE_PHOTO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/사건현장.png"
+    sourceStatus: "READY"
+    altText: "사건현장"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_PRIVATE_ADJUSTMENT_AGENDA.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/조정안건.png"
+    sourceStatus: "READY"
+    altText: "조정안건"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_DINING_SEATING_CHART.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DINING_SEATING_CHART"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_DINING_SEATING_CHART.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/만찬배치표.png"
+    sourceStatus: "READY"
+    altText: "만찬배치표"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_BLIND_MAP.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/2층 CCTV 시야.png"
+    sourceStatus: "READY"
+    altText: "2층 CCTV 시야"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_BEDROOM_WATER_BOTTLE_AND_CUP.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/물병.png"
+    sourceStatus: "READY"
+    altText: "물병"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_PERSONAL_NIGHT_MEDICATION_CASE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/이사장 개인 약통.png"
+    sourceStatus: "READY"
+    altText: "이사장 개인 약통"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_DIRECTOR_DECANTER_AND_WINE_GLASS.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/이사장 디캔터와 와인잔.png"
+    sourceStatus: "READY"
+    altText: "이사장 디캔터와 와인잔"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_NIGHT_MEDICATION_SNOOZE_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/복약알림 스누즈로그.png"
+    sourceStatus: "READY"
+    altText: "복약알림 스누즈로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_MEDICAL_CABINET_ACCESS_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MEDICAL_CABINET_ACCESS_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_MEDICAL_CABINET_ACCESS_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/약품보관함 로그.png"
+    sourceStatus: "READY"
+    altText: "약품보관함 로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_WINE_CELLAR_ACCESS_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_WINE_CELLAR_ACCESS_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_WINE_CELLAR_ACCESS_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/와인셀러 출입로그.png"
+    sourceStatus: "READY"
+    altText: "와인셀러 출입로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SERVER_RESYNC_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SECURITY_SERVER_RESYNC_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SERVER_RESYNC_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/보안서버 재동기화 로그.png"
+    sourceStatus: "READY"
+    altText: "보안서버 재동기화 로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_STATION_ACCESS_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CARE_STATION_ACCESS_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_STATION_ACCESS_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/케어스테이션 접근로그.png"
+    sourceStatus: "READY"
+    altText: "케어스테이션 접근로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_DIVORCE_PROPERTY_DRAFT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DIVORCE_PROPERTY_DRAFT"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_DIVORCE_PROPERTY_DRAFT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/이혼 재산분할 합의서.png"
+    sourceStatus: "READY"
+    altText: "이혼 재산분할 합의서"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_SECRET_LEDGER_AUDIT_NOTICE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/비밀장부 감사.png"
+    sourceStatus: "READY"
+    altText: "비밀장부 감사"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_VIP_PATIENT_INCIDENT_FILE.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_VIP_PATIENT_INCIDENT_FILE"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_VIP_PATIENT_INCIDENT_FILE.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/vip환자 사고.png"
+    sourceStatus: "READY"
+    altText: "vip환자 사고"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SCAPEGOAT_DRAFT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SECURITY_SCAPEGOAT_DRAFT"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_SECURITY_SCAPEGOAT_DRAFT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/보안기록 관리책임.png"
+    sourceStatus: "READY"
+    altText: "보안기록 관리책임"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_MANAGER_WHISTLEBLOWER_DRAFT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/케어매니저 제보.png"
+    sourceStatus: "READY"
+    altText: "케어매니저 제보"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_WEARABLE_VITAL_RAW_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_WEARABLE_VITAL_RAW_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_WEARABLE_VITAL_RAW_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/바이탈데이타.png"
+    sourceStatus: "READY"
+    altText: "바이탈데이타"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_NIGHT_PILL_PACKAGE_TEAR.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_NIGHT_PILL_PACKAGE_TEAR"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_NIGHT_PILL_PACKAGE_TEAR.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/배우자방 찢어진 약포장지.png"
+    sourceStatus: "READY"
+    altText: "배우자방 찢어진 약포장지"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_WATER_SERVICE_CHECKLIST.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_WATER_SERVICE_CHECKLIST"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_WATER_SERVICE_CHECKLIST.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/침실물병체크.png"
+    sourceStatus: "READY"
+    altText: "침실물병체크"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_DECANTER_SEAL_FRAGMENT.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_DECANTER_SEAL_FRAGMENT"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_DECANTER_SEAL_FRAGMENT.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/디캔터 실링 조각.png"
+    sourceStatus: "READY"
+    altText: "디캔터 실링 조각"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_MODIFIED_NIGHT_PRESCRIPTION_MEMO.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/수정된 야간 처방 메모.png"
+    sourceStatus: "READY"
+    altText: "수정된 야간 처방 메모"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_CALL_PANEL_LOG.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CARE_CALL_PANEL_LOG"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_CARE_CALL_PANEL_LOG.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/VIP 케어 호출 패널 로그.png"
+    sourceStatus: "PENDING_FILE_DROP"
+    altText: "VIP 케어 호출 패널 로그"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_STILL.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_SECOND_FLOOR_CCTV_STILL"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_SECOND_FLOOR_CCTV_STILL.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/2층 복도 부분 CCTV 스틸컷.png"
+    sourceStatus: "PENDING_FILE_DROP"
+    altText: "2층 복도 부분 CCTV 스틸컷"
+  - assetKey: "official/seowolchae/v1/evidence/EVIDENCE_CROSS_WITNESS_STATEMENT_CARD.png"
+    type: "EVIDENCE_IMAGE"
+    targetKind: "EVIDENCE"
+    targetCode: "EVIDENCE_CROSS_WITNESS_STATEMENT_CARD"
+    s3ObjectKey: "official/seowolchae/v1/evidence/EVIDENCE_CROSS_WITNESS_STATEMENT_CARD.png"
+    contentType: "image/png"
+    sourceLocalFile: "images/상호 목격 진술 카드.png"
+    sourceStatus: "PENDING_FILE_DROP"
+    altText: "상호 목격 진술 카드"
